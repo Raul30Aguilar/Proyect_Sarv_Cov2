@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Coronavirus_Proyecto.Views.Triaje.PersonaTriaje"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    xmlns:controls="clr-namespace:Coronavirus_Proyecto.Controls"
+    xmlns:converter="clr-namespace:Coronavirus_Proyecto.Converters"
+    xmlns:viewModel="clr-namespace:Coronavirus_Proyecto.ViewModels.Forms"
+    xmlns:behaviours="clr-namespace:Coronavirus_Proyecto.Behaviors"
+    Title="Datos de Usuario"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <viewModel:BusinessRegistrationFormViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles1.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout Spacing="0" BackgroundColor="{DynamicResource Gray-White}">
+
+                <!-- Title -->
+                <Label 
+                    Text="Completa el triaje"
+                    TextColor="{DynamicResource Gray-900}"
+                    FontFamily="{StaticResource Montserrat-Medium}"
+                    FontSize="16"
+                    Margin="0,20"
+                    HorizontalOptions="CenterAndExpand" />
+
+                <BoxView HeightRequest="1" BackgroundColor="{DynamicResource Gray-200}"/>
+                <ContentPresenter />
+
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="{DynamicResource Gray-100}" Spacing="0" Padding="16,24">
+
+                <!-- Pregunta 1 -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="¿Has estado fuera del pais recientemente?"
+                        TextColor="{DynamicResource Gray-800}" />
+
+            
+                <buttons:SfRadioGroup x:Name="rdbOpciones">
+
+                    <buttons:SfRadioButton x:Name="rdbSi" Text="Si" IsChecked="True"/>
+                    <buttons:SfRadioButton x:Name="rdbNo" Text="No"/>
+
+
+                </buttons:SfRadioGroup>
+
+
+                <!-- Pregunta 2 -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="¿Tienes sensación de falta de aire de inicio brusco?"
+                        TextColor="{DynamicResource Gray-800}" />
+
+
+                <buttons:SfRadioGroup x:Name="rdbOpciones1">
+
+                    <buttons:SfRadioButton x:Name="rdbSi1" Text="Si" IsChecked="True"/>
+                    <buttons:SfRadioButton x:Name="rdbNo1" Text="No"/>
+
+
+                </buttons:SfRadioGroup>
+
+                <!-- Pregunta 2 -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="¿Tienes fiebre?(+37.7ºC)"
+                        TextColor="{DynamicResource Gray-800}" />
+
+
+                <buttons:SfRadioGroup x:Name="rdbOpciones2">
+
+                    <buttons:SfRadioButton x:Name="rdbSi2" Text="Si" IsChecked="True"/>
+                    <buttons:SfRadioButton x:Name="rdbNo2" Text="No"/>
+
+
+                </buttons:SfRadioGroup>
+                <!-- Pregunta 3 -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="¿Tienes tos seca y persistente?"
+                        TextColor="{DynamicResource Gray-800}" />
+
+
+                <buttons:SfRadioGroup x:Name="rdbOpciones3">
+
+                    <buttons:SfRadioButton x:Name="rdbSi3" Text="Si" IsChecked="True"/>
+                    <buttons:SfRadioButton x:Name="rdbNo3" Text="No"/>
+
+
+                </buttons:SfRadioGroup>
+
+                <!-- Pregunta 4 -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="¿Has tenido contacto estrecho con algún paciente" 
+                           
+                        TextColor="{DynamicResource Gray-800}" />
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="6,0,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="positivo confirmado?" 
+                           
+                        TextColor="{DynamicResource Gray-800}" />
+
+
+                <buttons:SfRadioGroup x:Name="rdbOpciones4">
+
+                    <buttons:SfRadioButton x:Name="rdbSi4" Text="Si" IsChecked="True"/>
+                    <buttons:SfRadioButton x:Name="rdbNo4" Text="No"/>
+
+
+                </buttons:SfRadioGroup>
+                <!-- Pregunta 5 -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="¿Tienes sintomatología gastrointestinal?" 
+                           
+                        TextColor="{DynamicResource Gray-800}" />
+             
+
+
+                <buttons:SfRadioGroup x:Name="rdbOpciones5">
+
+                    <buttons:SfRadioButton x:Name="rdbSi5" Text="Si" IsChecked="True"/>
+                    <buttons:SfRadioButton x:Name="rdbNo5" Text="No"/>
+
+
+                </buttons:SfRadioGroup>
+
+                <!-- Submit Button -->
+                <buttons:SfButton
+                        x:Name="btnContinuar1"
+                        Command="{Binding SubmitCommand}"
+                        HorizontalOptions="Center"
+                        Margin="0,24,0,0"
+                        Style="{StaticResource SfButtonStyle}"
+                        Text="Continuar"
+                        WidthRequest="200" />
+
+                
+                   
+            </StackLayout>
+            
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

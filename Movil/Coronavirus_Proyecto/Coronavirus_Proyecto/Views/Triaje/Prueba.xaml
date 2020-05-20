@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             x:Class="Coronavirus_Proyecto.Views.Triaje.Prueba"
+               xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    xmlns:controls="clr-namespace:Coronavirus_Proyecto.Controls"
+    xmlns:converter="clr-namespace:Coronavirus_Proyecto.Converters"
+    xmlns:viewModel="clr-namespace:Coronavirus_Proyecto.ViewModels.Forms"
+    xmlns:behaviours="clr-namespace:Coronavirus_Proyecto.Behaviors"
+    Title="Datos de Usuario"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+            <!--<Button Text="&lt;" HeightRequest="40" WidthRequest="40" Clicked="Back_Clicked"/>
+            <Button Text="&gt;" HeightRequest="40" WidthRequest="40" Clicked="Fordward_Clicked"/>-->
+
+            <!--<Entry  x:Name="url" WidthRequest="180"/>
+            <Button Text="go" HeightRequest="40" WidthRequest="50" Clicked="Go_Clicked"/>-->
+ 
+
+
+        <Label x:Name="LoadingLabel" IsVisible="False"/>
+            
+        <WebView x:Name="Browser" HeightRequest="10000" WidthRequest="10000" Navigating="Browser_Navigating" Navigated="Browser_Navigated"/>
+
+       </StackLayout>
+    </StackLayout>
+</ContentPage>

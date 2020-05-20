@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Coronavirus_Proyecto.Views.Triaje.PersonaTriaje1"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    xmlns:controls="clr-namespace:Coronavirus_Proyecto.Controls"
+    xmlns:converter="clr-namespace:Coronavirus_Proyecto.Converters"
+    xmlns:viewModel="clr-namespace:Coronavirus_Proyecto.ViewModels.Forms"
+    xmlns:behaviours="clr-namespace:Coronavirus_Proyecto.Behaviors"
+    Title="Datos de Usuario"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <viewModel:BusinessRegistrationFormViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles1.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout Spacing="0" BackgroundColor="{DynamicResource Gray-White}">
+
+                <!-- Title -->
+                <Label 
+                    Text="Completa el triaje"
+                    TextColor="{DynamicResource Gray-900}"
+                    FontFamily="{StaticResource Montserrat-Medium}"
+                    FontSize="16"
+                    Margin="0,20"
+                    HorizontalOptions="CenterAndExpand" />
+
+                <BoxView HeightRequest="1" BackgroundColor="{DynamicResource Gray-200}"/>
+                <ContentPresenter />
+
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="{DynamicResource Gray-100}" Spacing="0" Padding="16,24">
+
+
+
+                <!-- Pregunta 1 -->
+
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="¿Tienes alguna de las siguientes enfermedades" 
+                           
+                        TextColor="{DynamicResource Gray-800}" />
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="6,0,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="enfermedades o condiciones?" 
+                           
+                        TextColor="{DynamicResource Gray-800}" />
+                <buttons:SfCheckBox x:Name="chbxObesidad" Text="Obesidad" IsChecked="False"/>
+                <buttons:SfCheckBox x:Name="chbxPulmonar" Text="Enfermedad pulmonar crónica (Asma, bronquitis,etc...)" IsChecked="False"/>
+                <buttons:SfCheckBox x:Name="chbxDiabetes" Text="Diabetes" IsChecked="False"/>
+                <buttons:SfCheckBox x:Name="chbxHipertension" Text="Hipertension" IsChecked="False"/>
+                <buttons:SfCheckBox x:Name="chbxCancer" Text="Cancer" IsChecked="False"/>
+
+                <!-- Pregunta 2 -->
+
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="¿Vives en la misma casa con alguna persona de los" 
+                           
+                        TextColor="{DynamicResource Gray-800}" />
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="6,0,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="siguientes grupos de riesgos?" 
+                           
+                        TextColor="{DynamicResource Gray-800}" />
+                <buttons:SfCheckBox x:Name="chbxAdultoMayor" Text="Adulto Mayor" IsChecked="False"/>
+                <buttons:SfCheckBox x:Name="chbxNino" Text="Niño" IsChecked="False"/>
+                <buttons:SfCheckBox x:Name="chbxGestante" Text="Gestante" IsChecked="False"/>
+                <buttons:SfCheckBox x:Name="chbxFamiliar" Text="Familiar con enfermedad crónica" IsChecked="False"/>
+                <!-- Pregunta 3 -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="¿Con cuantas personas vives?"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference NumeroPersonas}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry Keyboard="Telephone" 
+                            x:Name="NumeroPersonas" 
+                            Placeholder="Ingrese el numero de personas"
+                            Text="{Binding Ingrese Numero}"
+                            Style="{StaticResource EntryTextBoxStyle}" >
+                        <!--<controls:BorderlessEntry.Behaviors>
+                            <behaviours:EntryMaskedBehavior Mask="{Binding Source={x:Reference CountryPicker}, Path=Mask}" 
+                                                            Prefix="{Binding Source={Reference CountryPicker}, Path=CountryCode}"/>
+                        </controls:BorderlessEntry.Behaviors>-->
+                    </controls:BorderlessEntry>
+                </border:SfBorder>
+
+                <!-- Submit Button -->
+                <buttons:SfButton
+                        x:Name="btnRegistrar"
+                        Command="{Binding SubmitCommand}"
+                        HorizontalOptions="Center"
+                        Margin="0,24,0,0"
+                        Style="{StaticResource SfButtonStyle}"
+                        Text="Registrar"
+                        WidthRequest="200" />
+
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

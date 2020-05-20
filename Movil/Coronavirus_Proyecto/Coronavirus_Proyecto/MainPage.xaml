@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Coronavirus_Proyecto.MainPage">
+
+    <ScrollView>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                
+            </Grid.RowDefinitions>
+
+            <!-- header background -->
+            <Image Source="HeaderBackground.png" Aspect="AspectFill"/>
+            <Image Source="CurvedMask.png" Aspect="Fill"
+                   VerticalOptions="End"/>
+
+            <!-- profile name -->
+            <StackLayout Grid.Row="1" Padding="0,50,0,0">
+                <Label Text="Perú"
+                       Style="{StaticResource ProfileNameLabel}"/>
+                <Label Text="Cifras registradas"
+                       Style="{StaticResource ProfileTagLabel}"/>
+            </StackLayout>
+
+            <!-- social stats -->
+            <Grid Grid.Row="2" Margin="0,30" ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0">
+                    <Label Text="1000" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label Text="Registrados" Style="{StaticResource StatsCaptionLabel}"/>
+                </StackLayout>
+
+                
+                <StackLayout Grid.Column="1">
+                    <Label Text="486" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label Text="Infectados" Style="{StaticResource StatsCaptionLabel}"/>
+                </StackLayout>
+                        
+
+                <StackLayout Grid.Column="2">
+                    <Label Text="687" Style="{StaticResource StatsNumberLabel}"/>
+                    <Label Text="Curados" Style="{StaticResource StatsCaptionLabel}"/>
+                </StackLayout>
+            </Grid>
+            <!-- profile description -->
+
+            <Label Text="Realiza el triaje virtual para descartar si estas contagiado y brindadosla informacion necesaria para protegerte"
+                Grid.Row="3"
+                Style="{StaticResource StatsNumberLabel}"
+                   Margin="20,0"/>
+        
+            <!--<Label Text="No olvides seguir estas indicaciones e iniciar el triaje"
+                Grid.Row="3"
+                Style="{StaticResource MainBodyLabel}"
+                   Margin="20,0"/>-->
+
+            <!--<Image Source="info.png" Aspect="Fill"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                   HeightRequest="150" WidthRequest="400"
+                   TranslationY="500"/>-->
+           
+
+            <!-- follow button -->
+            <Button x:Name="btnEntendido" Text="Entendido"
+                Style="{StaticResource FollowButton}"
+                Grid.Row="4"
+                Margin="30"/>
+            <!-- profile image -->
+            <Image Source="ProfilePic.png" 
+                   VerticalOptions="End" HorizontalOptions="Center"
+                   HeightRequest="100" WidthRequest="100"
+                   TranslationY="50"/>
+        </Grid>
+        
+    </ScrollView>
+</ContentPage>

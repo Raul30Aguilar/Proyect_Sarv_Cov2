@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "27LLzDxP3zOtRxEoXj3TjdUsFkk8RWQefLIof5g49eNXfGr2au76ufKqezslBp70IYnm/mSTHKfF+i92gaNKeg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.licensing\\18.1.0.44\\syncfusion.licensing.18.1.0.44.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.xamarin.buttons\\18.1.0.44\\syncfusion.xamarin.buttons.18.1.0.44.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.xamarin.cards\\18.1.0.44\\syncfusion.xamarin.cards.18.1.0.44.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.xamarin.core\\18.1.0.44\\syncfusion.xamarin.core.18.1.0.44.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.xamarin.datasource\\18.1.0.44\\syncfusion.xamarin.datasource.18.1.0.44.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.xamarin.gridcommon\\18.1.0.44\\syncfusion.xamarin.gridcommon.18.1.0.44.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.xamarin.sfcombobox\\18.1.0.44\\syncfusion.xamarin.sfcombobox.18.1.0.44.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.xamarin.sflistview\\18.1.0.44\\syncfusion.xamarin.sflistview.18.1.0.44.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.xamarin.sfrating\\18.1.0.44\\syncfusion.xamarin.sfrating.18.1.0.44.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.xamarin.sfrotator\\18.1.0.44\\syncfusion.xamarin.sfrotator.18.1.0.44.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\xamarin.essentials\\1.2.0\\xamarin.essentials.1.2.0.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\xamarin.forms\\4.5.0.657\\xamarin.forms.4.5.0.657.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\xamarin.forms.googlemaps\\3.3.0\\xamarin.forms.googlemaps.3.3.0.nupkg.sha512",
+    "C:\\Users\\Administrador\\.nuget\\packages\\xamarin.forms.maps\\4.5.0.657\\xamarin.forms.maps.4.5.0.657.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Coronavirus_Proyecto.Views.Forms.BusinessRegistrationFormPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    xmlns:controls="clr-namespace:Coronavirus_Proyecto.Controls"
+    xmlns:converter="clr-namespace:Coronavirus_Proyecto.Converters"
+    xmlns:viewModel="clr-namespace:Coronavirus_Proyecto.ViewModels.Forms"
+    xmlns:behaviours="clr-namespace:Coronavirus_Proyecto.Behaviors"
+    Title="Datos de Usuario"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <viewModel:BusinessRegistrationFormViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout Spacing="0" BackgroundColor="{DynamicResource Gray-White}">
+                
+                <!-- Title -->
+                <Label 
+                    Text="Completa tus datos"
+                    TextColor="{DynamicResource Gray-900}"
+                    FontFamily="{StaticResource Montserrat-Medium}"
+                    FontSize="16"
+                    Margin="0,20"
+                    HorizontalOptions="CenterAndExpand" />
+
+                <BoxView HeightRequest="1" BackgroundColor="{DynamicResource Gray-200}"/>
+                <ContentPresenter />
+                
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="{DynamicResource Gray-100}" Spacing="0" Padding="16,24">
+
+                <!-- Phone Number -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Numero de celular"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference PhoneNumberEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry Keyboard="Telephone" 
+                            x:Name="PhoneNumberEntry" 
+                            Placeholder="{Binding PhoneNumberPlaceHolder}"
+                            Text="Ingrese Numero"
+                            Style="{StaticResource EntryTextBoxStyle}" >
+                        <!--<controls:BorderlessEntry.Behaviors>
+                            <behaviours:EntryMaskedBehavior Mask="{Binding Source={x:Reference CountryPicker}, Path=Mask}" 
+                                                            Prefix="{Binding Source={Reference CountryPicker}, Path=CountryCode}"/>
+                        </controls:BorderlessEntry.Behaviors>-->
+                    </controls:BorderlessEntry>
+                </border:SfBorder>
+
+
+                <!-- Nombre -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18" 
+                        FontSize="12"
+                        Text="Nombres"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference Nombre}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry
+                            x:Name="Nombre"
+                            Placeholder="Ingrese nombres"
+                            Text="{Binding BusinessName}"
+                            Style="{StaticResource EntryTextBoxStyle}" />
+                </border:SfBorder>
+
+
+                <!--Apellido-->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18" 
+                        FontSize="12"
+                        Text="Apellido"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference Nombre}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry
+                            x:Name="Apellido"
+                            Placeholder="Ingrese apellidos"
+                            Text="{Binding BusinessName}"
+                            Style="{StaticResource EntryTextBoxStyle}" />
+                </border:SfBorder>
+
+
+                <!-- Edad-->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Edad"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference PhoneNumberEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry Keyboard="Telephone" 
+                            x:Name="Edad" 
+                            Placeholder="Ingrese Edad"
+                         
+                            Style="{StaticResource EntryTextBoxStyle}" >
+                        <!--<controls:BorderlessEntry.Behaviors>
+                            <behaviours:EntryMaskedBehavior Mask="{Binding Source={x:Reference CountryPicker}, Path=Mask}" 
+                                                            Prefix="{Binding Source={Reference CountryPicker}, Path=CountryCode}"/>
+                        </controls:BorderlessEntry.Behaviors>-->
+                    </controls:BorderlessEntry>
+                </border:SfBorder>
+
+                <!-- Departamento -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Departamento"
+                        TextColor="{DynamicResource Gray-800}" />
+                        
+                <border:SfBorder
+                        BorderColor="{Binding Mode=Default, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource BusinessFormBorderStyle}">
+                        <combobox:SfComboBox
+                                x:Name="BusinessPicker"
+                                SelectedValue="{Binding Business, Mode=TwoWay}"
+                                Style="{StaticResource ComboBoxStyle}"
+                                Watermark="Seleccione departamento"
+                                VerticalOptions="CenterAndExpand">
+                        <combobox:SfComboBox.ComboBoxSource>
+                            <ListCollection:List x:TypeArguments="x:String">
+                                <x:String>Lima</x:String>
+                                <x:String>Arequipa</x:String>
+                                <x:String>Piura</x:String>
+                                <x:String>Tacna</x:String>
+                           
+                            </ListCollection:List>
+                        </combobox:SfComboBox.ComboBoxSource>
+                        <combobox:SfComboBox.DropDownButtonSettings>
+                                    <combobox:DropDownButtonSettings>
+                                        <combobox:DropDownButtonSettings.View>
+                                            <Label
+                                                    FontFamily="{StaticResource FontIcons}"
+                                                    FontSize="25"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{StaticResource DropDownButtonIcon}"
+                                                    TextColor="{DynamicResource Gray-600}"
+                                                    VerticalTextAlignment="Center" />
+                                </combobox:DropDownButtonSettings.View>
+                                    </combobox:DropDownButtonSettings>
+                                </combobox:SfComboBox.DropDownButtonSettings>
+                        </combobox:SfComboBox>
+                </border:SfBorder>
+                <!-- Distrito -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Distrito"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder
+                        BorderColor="{Binding Mode=Default, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource BusinessFormBorderStyle}">
+                    <combobox:SfComboBox
+                                x:Name="BusinessPicker1"
+                                    SelectedValue="{Binding Business, Mode=TwoWay}"
+                                    Style="{StaticResource ComboBoxStyle}"
+                                    Watermark="Seleccione distrito"
+                                VerticalOptions="CenterAndExpand">
+                        <combobox:SfComboBox.ComboBoxSource>
+                            <ListCollection:List x:TypeArguments="x:String">
+                                <x:String>Cercado de Lima</x:String>
+                                <x:String>Comas</x:String>
+                                <x:String>Puente Piedra</x:String>
+                                <x:String>Miraflores</x:String>
+                                <x:String>Carabayllo</x:String>
+                                <x:String>La Victoria</x:String>
+                                <x:String>San Luis</x:String>
+                            </ListCollection:List>
+                        </combobox:SfComboBox.ComboBoxSource>
+                        <combobox:SfComboBox.DropDownButtonSettings>
+                            <combobox:DropDownButtonSettings>
+                                <combobox:DropDownButtonSettings.View>
+                                    <Label
+                                                    FontFamily="{StaticResource FontIcons}"
+                                                    FontSize="25"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{StaticResource DropDownButtonIcon}"
+                                                    TextColor="{DynamicResource Gray-600}"
+                                                    VerticalTextAlignment="Center" />
+                                </combobox:DropDownButtonSettings.View>
+                            </combobox:DropDownButtonSettings>
+                        </combobox:SfComboBox.DropDownButtonSettings>
+                    </combobox:SfComboBox>
+                </border:SfBorder>
+
+                   <!-- Direccion -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18" 
+                        FontSize="12"
+                        Text="Direccion"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference Direccion}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry
+                            x:Name="Direccion"
+                            Placeholder="Ingrese direccion"
+                            Text="{Binding BusinessName}"
+                            Style="{StaticResource EntryTextBoxStyle}" />
+                </border:SfBorder>
+
+                
+                <!-- Email -->
+                <!--<Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Email"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference EmailEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry
+                            x:Name="EmailEntry"
+                            Placeholder="Email" Keyboard="Email"
+                            Text="{Binding Email}"
+                            Style="{StaticResource EntryTextBoxStyle}" />
+                </border:SfBorder>-->
+
+                <!-- Street Address -->
+                <!--<Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Street Address"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference StreetAddressEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry
+                            x:Name="StreetAddressEntry"
+                            Placeholder="Street Address"
+                            Text="{Binding StreetAddress}"
+                            Style="{StaticResource EntryTextBoxStyle}" />
+                </border:SfBorder>-->
+
+                <!-- Tipo Documento -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Tipo de documento"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder
+                        BorderColor="{Binding Mode=Default, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource BusinessFormBorderStyle}">
+                    <combobox:SfComboBox
+                                x:Name="TipoDocumentoPicker"
+                                SelectedValue="{Binding Business, Mode=TwoWay}"
+                                Style="{StaticResource ComboBoxStyle}"
+                                Watermark="Seleccione tipo de documento"
+                                VerticalOptions="CenterAndExpand">
+                        <combobox:SfComboBox.ComboBoxSource>
+                            <ListCollection:List x:TypeArguments="x:String">
+                                <x:String>DNI</x:String>
+                                <x:String>Carnet de extranjeria</x:String>
+                          
+
+                            </ListCollection:List>
+                        </combobox:SfComboBox.ComboBoxSource>
+                        <combobox:SfComboBox.DropDownButtonSettings>
+                            <combobox:DropDownButtonSettings>
+                                <combobox:DropDownButtonSettings.View>
+                                    <Label
+                                                    FontFamily="{StaticResource FontIcons}"
+                                                    FontSize="25"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{StaticResource DropDownButtonIcon}"
+                                                    TextColor="{DynamicResource Gray-600}"
+                                                    VerticalTextAlignment="Center" />
+                                </combobox:DropDownButtonSettings.View>
+                            </combobox:DropDownButtonSettings>
+                        </combobox:SfComboBox.DropDownButtonSettings>
+                    </combobox:SfComboBox>
+                </border:SfBorder>
+
+                <!-- NumeroDocumento -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Numero de documento"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference PhoneNumberEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry Keyboard="Telephone" 
+                            x:Name="NumeroDocumento" 
+                            Placeholder="{Binding PhoneNumberPlaceHolder}"
+                            Text="{Binding PhoneNumber}"
+                            Style="{StaticResource EntryTextBoxStyle}" >
+                        <!--<controls:BorderlessEntry.Behaviors>
+                            <behaviours:EntryMaskedBehavior Mask="{Binding Source={x:Reference CountryPicker}, Path=Mask}" 
+                                                            Prefix="{Binding Source={Reference CountryPicker}, Path=CountryCode}"/>
+                        </controls:BorderlessEntry.Behaviors>-->
+                    </controls:BorderlessEntry>
+                </border:SfBorder>
+                <!-- City and State -->
+                <!--<Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="City"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="4" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <border:SfBorder 
+                            Grid.Column="2" BorderColor="{Binding Source={x:Reference CityEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                                     Style="{StaticResource BusinessFormBorderStyle}">
+                        <controls:BorderlessEntry
+                                x:Name="CityEntry"
+                                Placeholder="City"
+                                Text="{Binding City, Source={Reference CountryPicker}}"
+                                Style="{StaticResource EntryTextBoxStyle}" />
+                    </border:SfBorder>
+                    
+                    <border:SfBorder
+                            BorderColor="{Binding Source={x:Reference StatePicker}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                            Style="{StaticResource BusinessFormBorderStyle}">
+                            <combobox:SfComboBox
+                                    x:Name="StatePicker"
+                                SelectedItem="{Binding State, Source={Reference CountryPicker}}"
+                                    DataSource="{Binding States, Source={Reference CountryPicker}}"
+                                    Style="{StaticResource ComboBoxStyle}"
+                                    Watermark="State"
+                                    VerticalOptions="CenterAndExpand">
+                                <combobox:SfComboBox.DropDownButtonSettings>
+                                <combobox:DropDownButtonSettings>
+                                        <combobox:DropDownButtonSettings.View>
+                                            <Label
+                                                    FontFamily="{StaticResource FontIcons}"
+                                                    FontSize="25"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{StaticResource DropDownButtonIcon}"
+                                                    TextColor="{DynamicResource Gray-600}"
+                                                    VerticalTextAlignment="Center" />
+                                        </combobox:DropDownButtonSettings.View>
+                                </combobox:DropDownButtonSettings>
+                                </combobox:SfComboBox.DropDownButtonSettings>
+                            </combobox:SfComboBox>
+                    </border:SfBorder>
+                </Grid>-->
+
+               
+                <!-- Submit Button -->
+                <buttons:SfButton
+                        x:Name="btnContinuar"
+                        Command="{Binding SubmitCommand}"
+                        HorizontalOptions="Center"
+                        Margin="0,24,0,0"
+                        Style="{StaticResource SfButtonStyle}"
+                        Text="Continuar"
+                        WidthRequest="200" />
+                
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

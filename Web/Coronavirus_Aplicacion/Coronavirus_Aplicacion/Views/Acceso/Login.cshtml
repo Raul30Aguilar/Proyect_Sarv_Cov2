@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+
+<h1>Login</h1>
+<div class="clear-loading spinner">
+    <span></span>
+</div>
+<div class="w3ls-login box box--big">
+
+    <form action="@Url.Content("~/Acceso/Login")" method="post">
+        <div class="agile-field-txt">
+            <label><i class="fa fa-user" aria-hidden="true"></i> Usuario </label>
+            <input type="text" name="User" placeholder="Ingrese Usuario" required="" />
+        </div>
+        <div class="agile-field-txt">
+            <label><i class="fa fa-unlock-alt" aria-hidden="true"></i> Contraseña</label>
+            <input type="password" name="Pass" placeholder="Ingrese Contraseña" required="" id="myInput" />
+
+        </div>
+
+        <script>
+                    function myFunction() {
+                        var x = document.getElementById("myInput");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                    }
+        </script>
+
+        <input type="submit" value="Iniciar Sesion">
+    </form>
+</div>
+
+<div class="copy-wthree">
+    <p>
+        © 2020 | Todos los derechos reservados | ISA REP
+
+    </p>
+</div>
