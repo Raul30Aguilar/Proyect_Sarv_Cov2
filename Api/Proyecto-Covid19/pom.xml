@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.tiburcio</groupId>
-	<artifactId>bicycles</artifactId>
+	<groupId>com.pe.covid</groupId>
+	<artifactId>covid-19</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>bicycles</name>
-	<description>CRUD with Spring, JPA and MySQL</description>
+	<name>Covid-19</name>
+	<description>CRUD DE CUIDADANO</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
