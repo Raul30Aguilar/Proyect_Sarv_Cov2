@@ -14,21 +14,21 @@ namespace Coronavirus_Aplicacion.Controllers
 {
     public class ListadoController : Controller
     {
-        private SARS_COV_2Entities3  bd = new SARS_COV_2Entities3();
+        private sars_cov_2Entities  bd = new sars_cov_2Entities();
 
         // GET: Listado
 
-        public ActionResult Listado(CIUDADANO model)
+        public ActionResult Listado(ciudadano model)
         {
-            ViewBag.tipo_documento = new SelectList(bd.TIPO_DOCUMENTO, "idTipoDocumento", "desTipoDocumento");
-            return View(bd.CIUDADANO.ToList());
+            ViewBag.tipo_documento = new SelectList(bd.tipo_documento, "idTipoDocumento", "desTipoDocumento");
+            return View(bd.ciudadano.ToList());
         }
 
         [HttpPost]
         public ActionResult Listado(int tipo_documento)
         {
-            ViewBag.tipo_documento = new SelectList(bd.TIPO_DOCUMENTO, "idTipoDocumento", "desTipoDocumento");
-            var tipo = bd.CIUDADANO.Include(x => x.TIPO_DOCUMENTO).Where(a => a.idTipoDocumento == tipo_documento);
+            ViewBag.tipo_documento = new SelectList(bd.tipo_documento, "idTipoDocumento", "desTipoDocumento");
+            var tipo = bd.ciudadano.Include(x => x.tipo_documento).Where(a => a.idtipodocumento == tipo_documento);
             return View(tipo.ToList());
 
         }

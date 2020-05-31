@@ -12,18 +12,18 @@ namespace Coronavirus_Aplicacion.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TIPO_ESTADO
+    public partial class tipo_estado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TIPO_ESTADO()
+        public tipo_estado()
         {
-            this.ESTADO_CIUDADANO = new HashSet<ESTADO_CIUDADANO>();
+            this.estado_ciudadano = new HashSet<estado_ciudadano>();
         }
     
-        public int idEstado { get; set; }
+        public int idestado { get; set; }
         public string estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ESTADO_CIUDADANO> ESTADO_CIUDADANO { get; set; }
+        public virtual ICollection<estado_ciudadano> estado_ciudadano { get; set; }
     }
 }

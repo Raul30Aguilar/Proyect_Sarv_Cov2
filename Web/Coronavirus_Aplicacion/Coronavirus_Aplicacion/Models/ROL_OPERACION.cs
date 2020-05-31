@@ -12,13 +12,13 @@ namespace Coronavirus_Aplicacion.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ROL_OPERACION
+    public partial class rol_operacion
     {
         public int id { get; set; }
-        public Nullable<int> idRol { get; set; }
-        public Nullable<int> idOperacion { get; set; }
+        public Nullable<int> idrol { get; set; }
+        public Nullable<int> idoperacion { get; set; }
     
-        public virtual OPERACION OPERACION { get; set; }
-        public virtual ROL ROL { get; set; }
+        public virtual operacion operacion { get; set; }
+        public virtual rol rol { get; set; }
     }
 }

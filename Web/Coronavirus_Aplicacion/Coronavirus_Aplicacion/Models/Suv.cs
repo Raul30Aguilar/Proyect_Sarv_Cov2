@@ -12,7 +12,7 @@ namespace Coronavirus_Aplicacion.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Suv
+    public partial class suv
     {
         public int id { get; set; }
         public string nombre { get; set; }

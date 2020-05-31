@@ -12,15 +12,17 @@ namespace Coronavirus_Aplicacion.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ESTADO_CIUDADANO
+    public partial class estado_ciudadano
     {
         public int id { get; set; }
-        public Nullable<int> idEstado { get; set; }
-        public string docCiudadano { get; set; }
-        public Nullable<int> idTriaje { get; set; }
+        public Nullable<int> idestado { get; set; }
+        public string docciudadano { get; set; }
+        public Nullable<int> idtriaje { get; set; }
+        public Nullable<System.DateTime> fechaRegistro { get; set; }
+        public Nullable<System.DateTime> fechaModificacion { get; set; }
     
-        public virtual CIUDADANO CIUDADANO { get; set; }
-        public virtual TIPO_ESTADO TIPO_ESTADO { get; set; }
-        public virtual TRIAJE TRIAJE { get; set; }
+        public virtual ciudadano ciudadano { get; set; }
+        public virtual tipo_estado tipo_estado { get; set; }
+        public virtual triaje triaje { get; set; }
     }
 }

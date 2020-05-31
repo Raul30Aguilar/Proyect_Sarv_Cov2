@@ -12,15 +12,15 @@ namespace Coronavirus_Aplicacion.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TRIAJE
+    public partial class triaje
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TRIAJE()
+        public triaje()
         {
-            this.ESTADO_CIUDADANO = new HashSet<ESTADO_CIUDADANO>();
+            this.estado_ciudadano = new HashSet<estado_ciudadano>();
         }
     
-        public int idTriaje { get; set; }
+        public int idtriaje { get; set; }
         public bool question1 { get; set; }
         public bool question2 { get; set; }
         public bool question3 { get; set; }
@@ -37,10 +37,10 @@ namespace Coronavirus_Aplicacion.Models
         public bool question2_cronica { get; set; }
         public int persona { get; set; }
         public System.DateTime fecha { get; set; }
-        public string docCiudadano { get; set; }
+        public string docciudadano { get; set; }
     
-        public virtual CIUDADANO CIUDADANO { get; set; }
+        public virtual ciudadano ciudadano { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ESTADO_CIUDADANO> ESTADO_CIUDADANO { get; set; }
+        public virtual ICollection<estado_ciudadano> estado_ciudadano { get; set; }
     }
 }

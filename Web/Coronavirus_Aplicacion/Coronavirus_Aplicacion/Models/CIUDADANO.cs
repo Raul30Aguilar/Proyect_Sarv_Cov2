@@ -12,35 +12,35 @@ namespace Coronavirus_Aplicacion.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CIUDADANO
+    public partial class ciudadano
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CIUDADANO()
+        public ciudadano()
         {
-            this.ESTADO_CIUDADANO = new HashSet<ESTADO_CIUDADANO>();
-            this.TRIAJE = new HashSet<TRIAJE>();
+            this.estado_ciudadano = new HashSet<estado_ciudadano>();
+            this.triaje = new HashSet<triaje>();
         }
     
-        public int idCiudadano { get; set; }
-        public string nomCiudadano { get; set; }
-        public string apeCiudadano { get; set; }
-        public string celCiudadano { get; set; }
-        public int edadCiudadano { get; set; }
-        public string docCiudadano { get; set; }
-        public string dirCiudadano { get; set; }
-        public int idDepartamento { get; set; }
-        public int idProv { get; set; }
-        public int idDistrito { get; set; }
-        public int idTipoDocumento { get; set; }
+        public int idciudadano { get; set; }
+        public string nomciudadano { get; set; }
+        public string apeciudadano { get; set; }
+        public string celciudadano { get; set; }
+        public int edadciudadano { get; set; }
+        public string docciudadano { get; set; }
+        public string dirciudadano { get; set; }
+        public int iddepartamento { get; set; }
+        public int idprov { get; set; }
+        public int iddistrito { get; set; }
+        public int idtipodocumento { get; set; }
         public System.DateTime fecha { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ESTADO_CIUDADANO> ESTADO_CIUDADANO { get; set; }
+        public virtual ICollection<estado_ciudadano> estado_ciudadano { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TRIAJE> TRIAJE { get; set; }
-        public virtual DEPARTAMENTO DEPARTAMENTO { get; set; }
-        public virtual DISTRITO DISTRITO { get; set; }
-        public virtual PROVINCIA PROVINCIA { get; set; }
-        public virtual TIPO_DOCUMENTO TIPO_DOCUMENTO { get; set; }
+        public virtual ICollection<triaje> triaje { get; set; }
+        public virtual departamento departamento { get; set; }
+        public virtual distrito distrito { get; set; }
+        public virtual provincia provincia { get; set; }
+        public virtual tipo_documento tipo_documento { get; set; }
     }
 }

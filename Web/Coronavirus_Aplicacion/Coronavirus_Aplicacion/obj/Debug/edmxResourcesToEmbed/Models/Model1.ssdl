@@ -1,117 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="SARS_COV_2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="CIUDADANO">
+<Schema Namespace="sars_cov_2Model.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ciudadano">
     <Key>
-      <PropertyRef Name="docCiudadano" />
+      <PropertyRef Name="docciudadano" />
     </Key>
-    <Property Name="idCiudadano" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nomCiudadano" Type="varchar" MaxLength="45" Nullable="false" />
-    <Property Name="apeCiudadano" Type="varchar" MaxLength="45" Nullable="false" />
-    <Property Name="celCiudadano" Type="char" MaxLength="9" Nullable="false" />
-    <Property Name="edadCiudadano" Type="int" Nullable="false" />
-    <Property Name="docCiudadano" Type="char" MaxLength="20" Nullable="false" />
-    <Property Name="dirCiudadano" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="idDepartamento" Type="int" Nullable="false" />
-    <Property Name="idProv" Type="int" Nullable="false" />
-    <Property Name="idDistrito" Type="int" Nullable="false" />
-    <Property Name="idTipoDocumento" Type="int" Nullable="false" />
+    <Property Name="idciudadano" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomciudadano" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="apeciudadano" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="celciudadano" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="edadciudadano" Type="int" Nullable="false" />
+    <Property Name="docciudadano" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="dirciudadano" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="iddepartamento" Type="int" Nullable="false" />
+    <Property Name="idprov" Type="int" Nullable="false" />
+    <Property Name="iddistrito" Type="int" Nullable="false" />
+    <Property Name="idtipodocumento" Type="int" Nullable="false" />
     <Property Name="fecha" Type="date" Nullable="false" />
   </EntityType>
-  <EntityType Name="DEPARTAMENTO">
+  <EntityType Name="departamento">
     <Key>
-      <PropertyRef Name="idDepartamento" />
+      <PropertyRef Name="iddepartamento" />
     </Key>
-    <Property Name="idDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripDepa" Type="varchar" MaxLength="50" />
+    <Property Name="iddepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripdepa" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="DISTRITO">
+  <EntityType Name="distrito">
     <Key>
-      <PropertyRef Name="idDistrito" />
+      <PropertyRef Name="iddistrito" />
     </Key>
-    <Property Name="idDistrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iddistrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="distrito" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="idProv" Type="int" />
+    <Property Name="idprov" Type="int" />
   </EntityType>
-  <EntityType Name="ESTADO_CIUDADANO">
+  <EntityType Name="estado_ciudadano">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="idEstado" Type="int" />
-    <Property Name="docCiudadano" Type="char" MaxLength="20" />
-    <Property Name="idTriaje" Type="int" />
+    <Property Name="idestado" Type="int" />
+    <Property Name="docciudadano" Type="char" MaxLength="20" />
+    <Property Name="idtriaje" Type="int" />
+    <Property Name="fechaRegistro" Type="datetime" Precision="0" />
+    <Property Name="fechaModificacion" Type="datetime" Precision="0" />
   </EntityType>
-  <EntityType Name="MODULO">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-  </EntityType>
-  <EntityType Name="OPERACION">
+  <EntityType Name="modulo">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="idModulo" Type="int" />
   </EntityType>
-  <EntityType Name="PROVINCIA">
+  <EntityType Name="operacion">
     <Key>
-      <PropertyRef Name="idProv" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="idProv" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="idmodulo" Type="int" />
+  </EntityType>
+  <EntityType Name="provincia">
+    <Key>
+      <PropertyRef Name="idprov" />
+    </Key>
+    <Property Name="idprov" Type="int" Nullable="false" />
     <Property Name="provincia" Type="varchar" MaxLength="50" />
-    <Property Name="idDepa" Type="int" />
+    <Property Name="iddepa" Type="int" />
   </EntityType>
-  <EntityType Name="Prueba">
+  <EntityType Name="prueba">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="ROL">
+  <EntityType Name="rol">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <EntityType Name="ROL_OPERACION">
+  <EntityType Name="rol_operacion">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="idRol" Type="int" />
-    <Property Name="idOperacion" Type="int" />
+    <Property Name="idrol" Type="int" />
+    <Property Name="idoperacion" Type="int" />
   </EntityType>
-  <EntityType Name="Suv">
+  <EntityType Name="suv">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="30" />
   </EntityType>
-  <EntityType Name="TIPO_DOCUMENTO">
+  <EntityType Name="tipo_documento">
     <Key>
-      <PropertyRef Name="idTipoDocumento" />
+      <PropertyRef Name="idtipodocumento" />
     </Key>
-    <Property Name="idTipoDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="desTipoDocumento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idtipodocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="destipodocumento" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="TIPO_ESTADO">
+  <EntityType Name="tipo_estado">
     <Key>
-      <PropertyRef Name="idEstado" />
+      <PropertyRef Name="idestado" />
     </Key>
-    <Property Name="idEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idestado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="TRIAJE">
+  <EntityType Name="triaje">
     <Key>
-      <PropertyRef Name="idTriaje" />
+      <PropertyRef Name="idtriaje" />
     </Key>
-    <Property Name="idTriaje" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idtriaje" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="question1" Type="bit" Nullable="false" />
     <Property Name="question2" Type="bit" Nullable="false" />
     <Property Name="question3" Type="bit" Nullable="false" />
@@ -128,9 +130,9 @@
     <Property Name="question2_cronica" Type="bit" Nullable="false" />
     <Property Name="persona" Type="int" Nullable="false" />
     <Property Name="fecha" Type="date" Nullable="false" />
-    <Property Name="docCiudadano" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="docciudadano" Type="char" MaxLength="20" Nullable="false" />
   </EntityType>
-  <EntityType Name="USUARIO">
+  <EntityType Name="usuario">
     <Key>
       <PropertyRef Name="id" />
     </Key>
@@ -139,247 +141,292 @@
     <Property Name="email" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="fecha" Type="date" Nullable="false" />
-    <Property Name="idRol" Type="int" />
+    <Property Name="idrol" Type="int" />
   </EntityType>
-  <Association Name="FK__ESTADO_CI__docCi__7A672E12">
-    <End Role="CIUDADANO" Type="Self.CIUDADANO" Multiplicity="0..1" />
-    <End Role="ESTADO_CIUDADANO" Type="Self.ESTADO_CIUDADANO" Multiplicity="*" />
+  <Association Name="fk__estado_ci__docci__7a672e12">
+    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="0..1" />
+    <End Role="estado_ciudadano" Type="Self.estado_ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="CIUDADANO">
-        <PropertyRef Name="docCiudadano" />
+      <Principal Role="ciudadano">
+        <PropertyRef Name="docciudadano" />
       </Principal>
-      <Dependent Role="ESTADO_CIUDADANO">
-        <PropertyRef Name="docCiudadano" />
+      <Dependent Role="estado_ciudadano">
+        <PropertyRef Name="docciudadano" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ESTADO_CI__idEst__797309D9">
-    <End Role="TIPO_ESTADO" Type="Self.TIPO_ESTADO" Multiplicity="0..1" />
-    <End Role="ESTADO_CIUDADANO" Type="Self.ESTADO_CIUDADANO" Multiplicity="*" />
+  <Association Name="fk__estado_ci__idest__440b1d61">
+    <End Role="tipo_estado" Type="Self.tipo_estado" Multiplicity="0..1" />
+    <End Role="estado_ciudadano" Type="Self.estado_ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="TIPO_ESTADO">
-        <PropertyRef Name="idEstado" />
+      <Principal Role="tipo_estado">
+        <PropertyRef Name="idestado" />
       </Principal>
-      <Dependent Role="ESTADO_CIUDADANO">
-        <PropertyRef Name="idEstado" />
+      <Dependent Role="estado_ciudadano">
+        <PropertyRef Name="idestado" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ESTADO_CI__idTri__7B5B524B">
-    <End Role="TRIAJE" Type="Self.TRIAJE" Multiplicity="0..1" />
-    <End Role="ESTADO_CIUDADANO" Type="Self.ESTADO_CIUDADANO" Multiplicity="*" />
+  <Association Name="fk__estado_ci__idtri__7b5b524b">
+    <End Role="triaje" Type="Self.triaje" Multiplicity="0..1" />
+    <End Role="estado_ciudadano" Type="Self.estado_ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="TRIAJE">
-        <PropertyRef Name="idTriaje" />
+      <Principal Role="triaje">
+        <PropertyRef Name="idtriaje" />
       </Principal>
-      <Dependent Role="ESTADO_CIUDADANO">
-        <PropertyRef Name="idTriaje" />
+      <Dependent Role="estado_ciudadano">
+        <PropertyRef Name="idtriaje" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__OPERACION__idMod__656C112C">
-    <End Role="MODULO" Type="Self.MODULO" Multiplicity="0..1" />
-    <End Role="OPERACION" Type="Self.OPERACION" Multiplicity="*" />
+  <Association Name="fk__operacion__idmod__45f365d3">
+    <End Role="modulo" Type="Self.modulo" Multiplicity="0..1" />
+    <End Role="operacion" Type="Self.operacion" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="MODULO">
+      <Principal Role="modulo">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="OPERACION">
-        <PropertyRef Name="idModulo" />
+      <Dependent Role="operacion">
+        <PropertyRef Name="idmodulo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ROL_OPERA__idOpe__693CA210">
-    <End Role="OPERACION" Type="Self.OPERACION" Multiplicity="0..1" />
-    <End Role="ROL_OPERACION" Type="Self.ROL_OPERACION" Multiplicity="*" />
+  <Association Name="fk__rol_opera__idope__47dbae45">
+    <End Role="operacion" Type="Self.operacion" Multiplicity="0..1" />
+    <End Role="rol_operacion" Type="Self.rol_operacion" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="OPERACION">
+      <Principal Role="operacion">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="ROL_OPERACION">
-        <PropertyRef Name="idOperacion" />
+      <Dependent Role="rol_operacion">
+        <PropertyRef Name="idoperacion" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ROL_OPERA__idRol__68487DD7">
-    <End Role="ROL" Type="Self.ROL" Multiplicity="0..1" />
-    <End Role="ROL_OPERACION" Type="Self.ROL_OPERACION" Multiplicity="*" />
+  <Association Name="fk__rol_opera__idrol__48cfd27e">
+    <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+    <End Role="rol_operacion" Type="Self.rol_operacion" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ROL">
+      <Principal Role="rol">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="ROL_OPERACION">
-        <PropertyRef Name="idRol" />
+      <Dependent Role="rol_operacion">
+        <PropertyRef Name="idrol" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__USUARIO__idRol__7E37BEF6">
-    <End Role="ROL" Type="Self.ROL" Multiplicity="0..1" />
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+  <Association Name="fk__usuario__idrol__4ab81af0">
+    <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ROL">
+      <Principal Role="rol">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="USUARIO">
-        <PropertyRef Name="idRol" />
+      <Dependent Role="usuario">
+        <PropertyRef Name="idrol" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_docCiudadano">
-    <End Role="CIUDADANO" Type="Self.CIUDADANO" Multiplicity="1" />
-    <End Role="TRIAJE" Type="Self.TRIAJE" Multiplicity="*" />
+  <Association Name="fk_docciudadano">
+    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="1" />
+    <End Role="triaje" Type="Self.triaje" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="CIUDADANO">
-        <PropertyRef Name="docCiudadano" />
+      <Principal Role="ciudadano">
+        <PropertyRef Name="docciudadano" />
       </Principal>
-      <Dependent Role="TRIAJE">
-        <PropertyRef Name="docCiudadano" />
+      <Dependent Role="triaje">
+        <PropertyRef Name="docciudadano" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_idDepa">
-    <End Role="DEPARTAMENTO" Type="Self.DEPARTAMENTO" Multiplicity="0..1" />
-    <End Role="PROVINCIA" Type="Self.PROVINCIA" Multiplicity="*" />
+  <Association Name="fk_iddepa">
+    <End Role="departamento" Type="Self.departamento" Multiplicity="0..1" />
+    <End Role="provincia" Type="Self.provincia" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DEPARTAMENTO">
-        <PropertyRef Name="idDepartamento" />
+      <Principal Role="departamento">
+        <PropertyRef Name="iddepartamento" />
       </Principal>
-      <Dependent Role="PROVINCIA">
-        <PropertyRef Name="idDepa" />
+      <Dependent Role="provincia">
+        <PropertyRef Name="iddepa" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_idDepartamento">
-    <End Role="DEPARTAMENTO" Type="Self.DEPARTAMENTO" Multiplicity="1" />
-    <End Role="CIUDADANO" Type="Self.CIUDADANO" Multiplicity="*" />
+  <Association Name="fk_iddepartamento">
+    <End Role="departamento" Type="Self.departamento" Multiplicity="1" />
+    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DEPARTAMENTO">
-        <PropertyRef Name="idDepartamento" />
+      <Principal Role="departamento">
+        <PropertyRef Name="iddepartamento" />
       </Principal>
-      <Dependent Role="CIUDADANO">
-        <PropertyRef Name="idDepartamento" />
+      <Dependent Role="ciudadano">
+        <PropertyRef Name="iddepartamento" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_idDistri">
-    <End Role="DISTRITO" Type="Self.DISTRITO" Multiplicity="1" />
-    <End Role="CIUDADANO" Type="Self.CIUDADANO" Multiplicity="*" />
+  <Association Name="fk_iddistri">
+    <End Role="distrito" Type="Self.distrito" Multiplicity="1" />
+    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DISTRITO">
-        <PropertyRef Name="idDistrito" />
+      <Principal Role="distrito">
+        <PropertyRef Name="iddistrito" />
       </Principal>
-      <Dependent Role="CIUDADANO">
-        <PropertyRef Name="idDistrito" />
+      <Dependent Role="ciudadano">
+        <PropertyRef Name="iddistrito" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_idProv">
-    <End Role="PROVINCIA" Type="Self.PROVINCIA" Multiplicity="0..1" />
-    <End Role="DISTRITO" Type="Self.DISTRITO" Multiplicity="*" />
+  <Association Name="fk_idprov">
+    <End Role="provincia" Type="Self.provincia" Multiplicity="0..1" />
+    <End Role="distrito" Type="Self.distrito" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="PROVINCIA">
-        <PropertyRef Name="idProv" />
+      <Principal Role="provincia">
+        <PropertyRef Name="idprov" />
       </Principal>
-      <Dependent Role="DISTRITO">
-        <PropertyRef Name="idProv" />
+      <Dependent Role="distrito">
+        <PropertyRef Name="idprov" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_idProvi">
-    <End Role="PROVINCIA" Type="Self.PROVINCIA" Multiplicity="1" />
-    <End Role="CIUDADANO" Type="Self.CIUDADANO" Multiplicity="*" />
+  <Association Name="fk_idprovi">
+    <End Role="provincia" Type="Self.provincia" Multiplicity="1" />
+    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="PROVINCIA">
-        <PropertyRef Name="idProv" />
+      <Principal Role="provincia">
+        <PropertyRef Name="idprov" />
       </Principal>
-      <Dependent Role="CIUDADANO">
-        <PropertyRef Name="idProv" />
+      <Dependent Role="ciudadano">
+        <PropertyRef Name="idprov" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_idTipoDocumento">
-    <End Role="TIPO_DOCUMENTO" Type="Self.TIPO_DOCUMENTO" Multiplicity="1" />
-    <End Role="CIUDADANO" Type="Self.CIUDADANO" Multiplicity="*" />
+  <Association Name="fk_idtipodocumento">
+    <End Role="tipo_documento" Type="Self.tipo_documento" Multiplicity="1" />
+    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="TIPO_DOCUMENTO">
-        <PropertyRef Name="idTipoDocumento" />
+      <Principal Role="tipo_documento">
+        <PropertyRef Name="idtipodocumento" />
       </Principal>
-      <Dependent Role="CIUDADANO">
-        <PropertyRef Name="idTipoDocumento" />
+      <Dependent Role="ciudadano">
+        <PropertyRef Name="idtipodocumento" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="SARS_COV_2ModelStoreContainer">
-    <EntitySet Name="CIUDADANO" EntityType="Self.CIUDADANO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DEPARTAMENTO" EntityType="Self.DEPARTAMENTO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DISTRITO" EntityType="Self.DISTRITO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ESTADO_CIUDADANO" EntityType="Self.ESTADO_CIUDADANO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MODULO" EntityType="Self.MODULO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OPERACION" EntityType="Self.OPERACION" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PROVINCIA" EntityType="Self.PROVINCIA" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Prueba" EntityType="Self.Prueba" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ROL" EntityType="Self.ROL" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ROL_OPERACION" EntityType="Self.ROL_OPERACION" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Suv" EntityType="Self.Suv" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TIPO_DOCUMENTO" EntityType="Self.TIPO_DOCUMENTO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TIPO_ESTADO" EntityType="Self.TIPO_ESTADO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TRIAJE" EntityType="Self.TRIAJE" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__ESTADO_CI__docCi__7A672E12" Association="Self.FK__ESTADO_CI__docCi__7A672E12">
-      <End Role="CIUDADANO" EntitySet="CIUDADANO" />
-      <End Role="ESTADO_CIUDADANO" EntitySet="ESTADO_CIUDADANO" />
+  <Function Name="add_status_ciu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2">
+    <Parameter Name="idstatus" Type="int" Mode="In" />
+    <Parameter Name="doc" Type="char" Mode="In" />
+    <Parameter Name="triaje" Type="int" Mode="In" />
+  </Function>
+  <Function Name="put_status_ciu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2">
+    <Parameter Name="idstatus" Type="int" Mode="In" />
+    <Parameter Name="doc" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_add_cuixtriaje" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2">
+    <Parameter Name="nom" Type="varchar" Mode="In" />
+    <Parameter Name="ape" Type="varchar" Mode="In" />
+    <Parameter Name="cel" Type="char" Mode="In" />
+    <Parameter Name="edad" Type="int" Mode="In" />
+    <Parameter Name="doc" Type="char" Mode="In" />
+    <Parameter Name="dir" Type="varchar" Mode="In" />
+    <Parameter Name="depa" Type="int" Mode="In" />
+    <Parameter Name="prov" Type="int" Mode="In" />
+    <Parameter Name="dis" Type="int" Mode="In" />
+    <Parameter Name="tdoc" Type="int" Mode="In" />
+    <Parameter Name="fecha" Type="date" Mode="In" />
+    <Parameter Name="qua1" Type="bit" Mode="In" />
+    <Parameter Name="qua2" Type="bit" Mode="In" />
+    <Parameter Name="qua3" Type="bit" Mode="In" />
+    <Parameter Name="qua4" Type="bit" Mode="In" />
+    <Parameter Name="qua5" Type="bit" Mode="In" />
+    <Parameter Name="qua_obe" Type="bit" Mode="In" />
+    <Parameter Name="qua_enfe" Type="bit" Mode="In" />
+    <Parameter Name="qua_dia" Type="bit" Mode="In" />
+    <Parameter Name="qua_hipe" Type="bit" Mode="In" />
+    <Parameter Name="qua_can" Type="bit" Mode="In" />
+    <Parameter Name="qua_adu" Type="bit" Mode="In" />
+    <Parameter Name="qua_ni" Type="bit" Mode="In" />
+    <Parameter Name="qua_ges" Type="bit" Mode="In" />
+    <Parameter Name="qua_cro" Type="bit" Mode="In" />
+    <Parameter Name="per" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_list_depa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2" />
+  <Function Name="sp_list_distrito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2" />
+  <Function Name="sp_list_prov" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2" />
+  <Function Name="sp_list_ubigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2">
+    <Parameter Name="depa" Type="varchar" Mode="In" />
+    <Parameter Name="prov" Type="varchar" Mode="In" />
+    <Parameter Name="distri" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="sars_cov_2ModelStoreContainer">
+    <EntitySet Name="ciudadano" EntityType="Self.ciudadano" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="departamento" EntityType="Self.departamento" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="distrito" EntityType="Self.distrito" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="estado_ciudadano" EntityType="Self.estado_ciudadano" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="modulo" EntityType="Self.modulo" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="operacion" EntityType="Self.operacion" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="provincia" EntityType="Self.provincia" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="prueba" EntityType="Self.prueba" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="rol" EntityType="Self.rol" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="rol_operacion" EntityType="Self.rol_operacion" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="suv" EntityType="Self.suv" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="tipo_estado" EntityType="Self.tipo_estado" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="triaje" EntityType="Self.triaje" Schema="sars_cov_2" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="sars_cov_2" store:Type="Tables" />
+    <AssociationSet Name="fk__estado_ci__docci__7a672e12" Association="Self.fk__estado_ci__docci__7a672e12">
+      <End Role="ciudadano" EntitySet="ciudadano" />
+      <End Role="estado_ciudadano" EntitySet="estado_ciudadano" />
     </AssociationSet>
-    <AssociationSet Name="FK__ESTADO_CI__idEst__797309D9" Association="Self.FK__ESTADO_CI__idEst__797309D9">
-      <End Role="TIPO_ESTADO" EntitySet="TIPO_ESTADO" />
-      <End Role="ESTADO_CIUDADANO" EntitySet="ESTADO_CIUDADANO" />
+    <AssociationSet Name="fk__estado_ci__idest__440b1d61" Association="Self.fk__estado_ci__idest__440b1d61">
+      <End Role="tipo_estado" EntitySet="tipo_estado" />
+      <End Role="estado_ciudadano" EntitySet="estado_ciudadano" />
     </AssociationSet>
-    <AssociationSet Name="FK__ESTADO_CI__idTri__7B5B524B" Association="Self.FK__ESTADO_CI__idTri__7B5B524B">
-      <End Role="TRIAJE" EntitySet="TRIAJE" />
-      <End Role="ESTADO_CIUDADANO" EntitySet="ESTADO_CIUDADANO" />
+    <AssociationSet Name="fk__estado_ci__idtri__7b5b524b" Association="Self.fk__estado_ci__idtri__7b5b524b">
+      <End Role="triaje" EntitySet="triaje" />
+      <End Role="estado_ciudadano" EntitySet="estado_ciudadano" />
     </AssociationSet>
-    <AssociationSet Name="FK__OPERACION__idMod__656C112C" Association="Self.FK__OPERACION__idMod__656C112C">
-      <End Role="MODULO" EntitySet="MODULO" />
-      <End Role="OPERACION" EntitySet="OPERACION" />
+    <AssociationSet Name="fk__operacion__idmod__45f365d3" Association="Self.fk__operacion__idmod__45f365d3">
+      <End Role="modulo" EntitySet="modulo" />
+      <End Role="operacion" EntitySet="operacion" />
     </AssociationSet>
-    <AssociationSet Name="FK__ROL_OPERA__idOpe__693CA210" Association="Self.FK__ROL_OPERA__idOpe__693CA210">
-      <End Role="OPERACION" EntitySet="OPERACION" />
-      <End Role="ROL_OPERACION" EntitySet="ROL_OPERACION" />
+    <AssociationSet Name="fk__rol_opera__idope__47dbae45" Association="Self.fk__rol_opera__idope__47dbae45">
+      <End Role="operacion" EntitySet="operacion" />
+      <End Role="rol_operacion" EntitySet="rol_operacion" />
     </AssociationSet>
-    <AssociationSet Name="FK__ROL_OPERA__idRol__68487DD7" Association="Self.FK__ROL_OPERA__idRol__68487DD7">
-      <End Role="ROL" EntitySet="ROL" />
-      <End Role="ROL_OPERACION" EntitySet="ROL_OPERACION" />
+    <AssociationSet Name="fk__rol_opera__idrol__48cfd27e" Association="Self.fk__rol_opera__idrol__48cfd27e">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="rol_operacion" EntitySet="rol_operacion" />
     </AssociationSet>
-    <AssociationSet Name="FK__USUARIO__idRol__7E37BEF6" Association="Self.FK__USUARIO__idRol__7E37BEF6">
-      <End Role="ROL" EntitySet="ROL" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
+    <AssociationSet Name="fk__usuario__idrol__4ab81af0" Association="Self.fk__usuario__idrol__4ab81af0">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="usuario" EntitySet="usuario" />
     </AssociationSet>
-    <AssociationSet Name="FK_docCiudadano" Association="Self.FK_docCiudadano">
-      <End Role="CIUDADANO" EntitySet="CIUDADANO" />
-      <End Role="TRIAJE" EntitySet="TRIAJE" />
+    <AssociationSet Name="fk_docciudadano" Association="Self.fk_docciudadano">
+      <End Role="ciudadano" EntitySet="ciudadano" />
+      <End Role="triaje" EntitySet="triaje" />
     </AssociationSet>
-    <AssociationSet Name="FK_idDepa" Association="Self.FK_idDepa">
-      <End Role="DEPARTAMENTO" EntitySet="DEPARTAMENTO" />
-      <End Role="PROVINCIA" EntitySet="PROVINCIA" />
+    <AssociationSet Name="fk_iddepa" Association="Self.fk_iddepa">
+      <End Role="departamento" EntitySet="departamento" />
+      <End Role="provincia" EntitySet="provincia" />
     </AssociationSet>
-    <AssociationSet Name="FK_idDepartamento" Association="Self.FK_idDepartamento">
-      <End Role="DEPARTAMENTO" EntitySet="DEPARTAMENTO" />
-      <End Role="CIUDADANO" EntitySet="CIUDADANO" />
+    <AssociationSet Name="fk_iddepartamento" Association="Self.fk_iddepartamento">
+      <End Role="departamento" EntitySet="departamento" />
+      <End Role="ciudadano" EntitySet="ciudadano" />
     </AssociationSet>
-    <AssociationSet Name="FK_idDistri" Association="Self.FK_idDistri">
-      <End Role="DISTRITO" EntitySet="DISTRITO" />
-      <End Role="CIUDADANO" EntitySet="CIUDADANO" />
+    <AssociationSet Name="fk_iddistri" Association="Self.fk_iddistri">
+      <End Role="distrito" EntitySet="distrito" />
+      <End Role="ciudadano" EntitySet="ciudadano" />
     </AssociationSet>
-    <AssociationSet Name="FK_idProv" Association="Self.FK_idProv">
-      <End Role="PROVINCIA" EntitySet="PROVINCIA" />
-      <End Role="DISTRITO" EntitySet="DISTRITO" />
+    <AssociationSet Name="fk_idprov" Association="Self.fk_idprov">
+      <End Role="provincia" EntitySet="provincia" />
+      <End Role="distrito" EntitySet="distrito" />
     </AssociationSet>
-    <AssociationSet Name="FK_idProvi" Association="Self.FK_idProvi">
-      <End Role="PROVINCIA" EntitySet="PROVINCIA" />
-      <End Role="CIUDADANO" EntitySet="CIUDADANO" />
+    <AssociationSet Name="fk_idprovi" Association="Self.fk_idprovi">
+      <End Role="provincia" EntitySet="provincia" />
+      <End Role="ciudadano" EntitySet="ciudadano" />
     </AssociationSet>
-    <AssociationSet Name="FK_idTipoDocumento" Association="Self.FK_idTipoDocumento">
-      <End Role="TIPO_DOCUMENTO" EntitySet="TIPO_DOCUMENTO" />
-      <End Role="CIUDADANO" EntitySet="CIUDADANO" />
+    <AssociationSet Name="fk_idtipodocumento" Association="Self.fk_idtipodocumento">
+      <End Role="tipo_documento" EntitySet="tipo_documento" />
+      <End Role="ciudadano" EntitySet="ciudadano" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

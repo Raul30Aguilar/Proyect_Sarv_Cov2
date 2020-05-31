@@ -12,18 +12,18 @@ namespace Coronavirus_Aplicacion.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TIPO_DOCUMENTO
+    public partial class tipo_documento
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TIPO_DOCUMENTO()
+        public tipo_documento()
         {
-            this.CIUDADANO = new HashSet<CIUDADANO>();
+            this.ciudadano = new HashSet<ciudadano>();
         }
     
-        public int idTipoDocumento { get; set; }
-        public string desTipoDocumento { get; set; }
+        public int idtipodocumento { get; set; }
+        public string destipodocumento { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CIUDADANO> CIUDADANO { get; set; }
+        public virtual ICollection<ciudadano> ciudadano { get; set; }
     }
 }

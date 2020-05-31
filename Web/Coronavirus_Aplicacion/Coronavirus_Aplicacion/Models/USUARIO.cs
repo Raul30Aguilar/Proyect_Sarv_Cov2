@@ -12,15 +12,15 @@ namespace Coronavirus_Aplicacion.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class USUARIO
+    public partial class usuario
     {
         public int id { get; set; }
         public string nombre { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public System.DateTime fecha { get; set; }
-        public Nullable<int> idRol { get; set; }
+        public Nullable<int> idrol { get; set; }
     
-        public virtual ROL ROL { get; set; }
+        public virtual rol rol { get; set; }
     }
 }

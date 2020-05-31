@@ -12,23 +12,23 @@ namespace Coronavirus_Aplicacion.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PROVINCIA
+    public partial class provincia
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PROVINCIA()
+        public provincia()
         {
-            this.CIUDADANO = new HashSet<CIUDADANO>();
-            this.DISTRITO = new HashSet<DISTRITO>();
+            this.ciudadano = new HashSet<ciudadano>();
+            this.distrito = new HashSet<distrito>();
         }
     
-        public int idProv { get; set; }
+        public int idprov { get; set; }
         public string provincia1 { get; set; }
-        public Nullable<int> idDepa { get; set; }
+        public Nullable<int> iddepa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CIUDADANO> CIUDADANO { get; set; }
-        public virtual DEPARTAMENTO DEPARTAMENTO { get; set; }
+        public virtual ICollection<ciudadano> ciudadano { get; set; }
+        public virtual departamento departamento { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DISTRITO> DISTRITO { get; set; }
+        public virtual ICollection<distrito> distrito { get; set; }
     }
 }

@@ -12,20 +12,20 @@ namespace Coronavirus_Aplicacion.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class OPERACION
+    public partial class operacion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OPERACION()
+        public operacion()
         {
-            this.ROL_OPERACION = new HashSet<ROL_OPERACION>();
+            this.rol_operacion = new HashSet<rol_operacion>();
         }
     
         public int id { get; set; }
         public string nombre { get; set; }
-        public Nullable<int> idModulo { get; set; }
+        public Nullable<int> idmodulo { get; set; }
     
-        public virtual MODULO MODULO { get; set; }
+        public virtual modulo modulo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ROL_OPERACION> ROL_OPERACION { get; set; }
+        public virtual ICollection<rol_operacion> rol_operacion { get; set; }
     }
 }
