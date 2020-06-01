@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 using Coronavirus_Proyecto.Class;
 using Coronavirus_Proyecto.Views.Mapa;
 using Coronavirus_Proyecto.Views.Menu;
+using Coronavirus_Proyecto.Views.Forms;
 
 namespace Coronavirus_Proyecto
 {
@@ -19,7 +20,7 @@ namespace Coronavirus_Proyecto
             //new GeoLocation().getLocationGPS(); 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQzNjkxQDMxMzgyZTMxMmUzMGZOMFJQbTl1TG1vQ05OY3BGajdqSDNkUkJueGl5cUxMdzJOSVhDMHBxUFU9");
             new NetworkState().iHaveInternet();
-            MainPage = new NavigationPage(new OnBoardingAnimationPage());
+            MainPage = new NavigationPage(new BusinessRegistrationFormPage());
 
 
         }

@@ -15,10 +15,10 @@ namespace Coronavirus_Aplicacion.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class sars_cov_2Entities : DbContext
+    public partial class sars_cov_2Entities1 : DbContext
     {
-        public sars_cov_2Entities()
-            : base("name=sars_cov_2Entities")
+        public sars_cov_2Entities1()
+            : base("name=sars_cov_2Entities1")
         {
         }
     

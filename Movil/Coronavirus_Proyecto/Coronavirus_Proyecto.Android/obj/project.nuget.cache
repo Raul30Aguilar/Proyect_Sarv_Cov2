@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "syTHhNdNbDtrPVgxINc+VaF84mRLVXW+V7h0MHnrHynDNO2QgPlNV/U2aRw8VyUlEMbhUboWqI5H7RNmy01adg==",
+  "dgSpecHash": "0+3av6Ay0ZFDbeqx0trx/GdSsUDzD7nrtxbNlGJVYzFj/HXCZQRAG+jXhKs/Ab5tLPp7vFFbmvt/eeIAlfbg+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto.Android\\Coronavirus_Proyecto.Android.csproj",
+  "projectFilePath": "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto.Android\\Coronavirus_Proyecto.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrador\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.licensing\\18.1.0.44\\syncfusion.licensing.18.1.0.44.nupkg.sha512",

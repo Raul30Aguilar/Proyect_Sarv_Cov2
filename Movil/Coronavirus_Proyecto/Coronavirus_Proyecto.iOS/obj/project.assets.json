@@ -2306,11 +2306,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto.iOS\\Coronavirus_Proyecto.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto.iOS\\Coronavirus_Proyecto.iOS.csproj",
       "projectName": "Coronavirus_Proyecto.iOS",
-      "projectPath": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto.iOS\\Coronavirus_Proyecto.iOS.csproj",
+      "projectPath": "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto.iOS\\Coronavirus_Proyecto.iOS.csproj",
       "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2331,8 +2331,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj": {
-              "projectPath": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj"
+            "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj": {
+              "projectPath": "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj"
             }
           }
         }

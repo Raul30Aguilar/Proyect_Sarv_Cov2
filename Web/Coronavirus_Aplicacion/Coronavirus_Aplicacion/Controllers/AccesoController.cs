@@ -19,7 +19,7 @@ namespace Coronavirus_Aplicacion.Controllers
         {
             try
             {
-                using (Models.sars_cov_2Entities db = new Models.sars_cov_2Entities())
+                using (Models.sars_cov_2Entities1 db = new Models.sars_cov_2Entities1())
                 {
                     var oUser = (from d in db.usuario
                                  where d.email == User.Trim() && d.password == Pass.Trim()

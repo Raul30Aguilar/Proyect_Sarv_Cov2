@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sars_cov_2ModelStoreContainer" CdmEntityContainer="sars_cov_2Entities1">
+    <EntitySetMapping Name="ciudadano">
+      <EntityTypeMapping TypeName="sars_cov_2Model.ciudadano">
+        <MappingFragment StoreEntitySet="ciudadano">
+          <ScalarProperty Name="idciudadano" ColumnName="idciudadano" />
+          <ScalarProperty Name="nomciudadano" ColumnName="nomciudadano" />
+          <ScalarProperty Name="apeciudadano" ColumnName="apeciudadano" />
+          <ScalarProperty Name="celciudadano" ColumnName="celciudadano" />
+          <ScalarProperty Name="edadciudadano" ColumnName="edadciudadano" />
+          <ScalarProperty Name="docciudadano" ColumnName="docciudadano" />
+          <ScalarProperty Name="dirciudadano" ColumnName="dirciudadano" />
+          <ScalarProperty Name="iddepartamento" ColumnName="iddepartamento" />
+          <ScalarProperty Name="idprov" ColumnName="idprov" />
+          <ScalarProperty Name="iddistrito" ColumnName="iddistrito" />
+          <ScalarProperty Name="idtipodocumento" ColumnName="idtipodocumento" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departamento">
+      <EntityTypeMapping TypeName="sars_cov_2Model.departamento">
+        <MappingFragment StoreEntitySet="departamento">
+          <ScalarProperty Name="iddepartamento" ColumnName="iddepartamento" />
+          <ScalarProperty Name="descripdepa" ColumnName="descripdepa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="distrito">
+      <EntityTypeMapping TypeName="sars_cov_2Model.distrito">
+        <MappingFragment StoreEntitySet="distrito">
+          <ScalarProperty Name="iddistrito" ColumnName="iddistrito" />
+          <ScalarProperty Name="distrito1" ColumnName="distrito" />
+          <ScalarProperty Name="idprov" ColumnName="idprov" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estado_ciudadano">
+      <EntityTypeMapping TypeName="sars_cov_2Model.estado_ciudadano">
+        <MappingFragment StoreEntitySet="estado_ciudadano">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idestado" ColumnName="idestado" />
+          <ScalarProperty Name="docciudadano" ColumnName="docciudadano" />
+          <ScalarProperty Name="idtriaje" ColumnName="idtriaje" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modulo">
+      <EntityTypeMapping TypeName="sars_cov_2Model.modulo">
+        <MappingFragment StoreEntitySet="modulo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="operacion">
+      <EntityTypeMapping TypeName="sars_cov_2Model.operacion">
+        <MappingFragment StoreEntitySet="operacion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idmodulo" ColumnName="idmodulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="provincia">
+      <EntityTypeMapping TypeName="sars_cov_2Model.provincia">
+        <MappingFragment StoreEntitySet="provincia">
+          <ScalarProperty Name="idprov" ColumnName="idprov" />
+          <ScalarProperty Name="provincia1" ColumnName="provincia" />
+          <ScalarProperty Name="iddepa" ColumnName="iddepa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prueba">
+      <EntityTypeMapping TypeName="sars_cov_2Model.prueba">
+        <MappingFragment StoreEntitySet="prueba">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol">
+      <EntityTypeMapping TypeName="sars_cov_2Model.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol_operacion">
+      <EntityTypeMapping TypeName="sars_cov_2Model.rol_operacion">
+        <MappingFragment StoreEntitySet="rol_operacion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idrol" ColumnName="idrol" />
+          <ScalarProperty Name="idoperacion" ColumnName="idoperacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suv">
+      <EntityTypeMapping TypeName="sars_cov_2Model.suv">
+        <MappingFragment StoreEntitySet="suv">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_documento">
+      <EntityTypeMapping TypeName="sars_cov_2Model.tipo_documento">
+        <MappingFragment StoreEntitySet="tipo_documento">
+          <ScalarProperty Name="idtipodocumento" ColumnName="idtipodocumento" />
+          <ScalarProperty Name="destipodocumento" ColumnName="destipodocumento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_estado">
+      <EntityTypeMapping TypeName="sars_cov_2Model.tipo_estado">
+        <MappingFragment StoreEntitySet="tipo_estado">
+          <ScalarProperty Name="idestado" ColumnName="idestado" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="triaje">
+      <EntityTypeMapping TypeName="sars_cov_2Model.triaje">
+        <MappingFragment StoreEntitySet="triaje">
+          <ScalarProperty Name="idtriaje" ColumnName="idtriaje" />
+          <ScalarProperty Name="question1" ColumnName="question1" />
+          <ScalarProperty Name="question2" ColumnName="question2" />
+          <ScalarProperty Name="question3" ColumnName="question3" />
+          <ScalarProperty Name="question4" ColumnName="question4" />
+          <ScalarProperty Name="question5" ColumnName="question5" />
+          <ScalarProperty Name="question_obesidad" ColumnName="question_obesidad" />
+          <ScalarProperty Name="question_enfermedad" ColumnName="question_enfermedad" />
+          <ScalarProperty Name="question_diabetes" ColumnName="question_diabetes" />
+          <ScalarProperty Name="question_hipertension" ColumnName="question_hipertension" />
+          <ScalarProperty Name="question_cancer" ColumnName="question_cancer" />
+          <ScalarProperty Name="question2_adulto" ColumnName="question2_adulto" />
+          <ScalarProperty Name="question2_nino" ColumnName="question2_nino" />
+          <ScalarProperty Name="question2_gestante" ColumnName="question2_gestante" />
+          <ScalarProperty Name="question2_cronica" ColumnName="question2_cronica" />
+          <ScalarProperty Name="persona" ColumnName="persona" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="docciudadano" ColumnName="docciudadano" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="sars_cov_2Model.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idrol" ColumnName="idrol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="add_status_ciu" FunctionName="sars_cov_2Model.Store.add_status_ciu" />
+    <FunctionImportMapping FunctionImportName="put_status_ciu" FunctionName="sars_cov_2Model.Store.put_status_ciu" />
+    <FunctionImportMapping FunctionImportName="sp_add_cuixtriaje" FunctionName="sars_cov_2Model.Store.sp_add_cuixtriaje" />
+    <FunctionImportMapping FunctionImportName="sp_list_ubigeo" FunctionName="sars_cov_2Model.Store.sp_list_ubigeo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sars_cov_2Model.sp_list_ubigeo_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "27LLzDxP3zOtRxEoXj3TjdUsFkk8RWQefLIof5g49eNXfGr2au76ufKqezslBp70IYnm/mSTHKfF+i92gaNKeg==",
+  "dgSpecHash": "VsbvKlnSGABdD04oozAGfu6YMgnWXdm0Tkv5o1KbuIrKvCkmbRCScTENq27dP7derccTy8Rrm5vorZhQuPVa8g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj",
+  "projectFilePath": "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

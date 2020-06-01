@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cJRyAGtCYjhnmyh5he5dAxZU/OtgsO0C9d8YP6KRtM3pWtAp98wn9xqhoJVab6i90SvbMRF87piyZ+r+eh0U2w==",
+  "dgSpecHash": "6PkYbMfmV34OhFrJMkle2XvR12fjHJXokhKT0Sa07ZbKZpQTStTMK4u1JFVeV/L0Rmi1oLo8hVlRIIzc+nUK1w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto.iOS\\Coronavirus_Proyecto.iOS.csproj",
+  "projectFilePath": "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto.iOS\\Coronavirus_Proyecto.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrador\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\syncfusion.licensing\\18.1.0.44\\syncfusion.licensing.18.1.0.44.nupkg.sha512",

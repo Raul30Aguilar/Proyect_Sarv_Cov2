@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj": {}
+    "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj": {
+    "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj",
+        "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj",
         "projectName": "Coronavirus_Proyecto",
-        "projectPath": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj",
+        "projectPath": "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\Coronavirus_Proyecto.csproj",
         "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrador\\source\\repos\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\obj\\",
+        "outputPath": "C:\\Users\\Administrador\\Desktop\\PIT_CORONAVIRUS\\Movil\\Coronavirus_Proyecto\\Coronavirus_Proyecto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -107,7 +107,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

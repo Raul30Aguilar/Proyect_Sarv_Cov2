@@ -631,3 +631,4 @@ C:\Users\Administrador\Desktop\PIT_CORONAVIRUS\Web\Coronavirus_Aplicacion\Corona
 C:\Users\Administrador\Desktop\PIT_CORONAVIRUS\Web\Coronavirus_Aplicacion\Coronavirus_Aplicacion\bin\System.Threading.Tasks.Extensions.dll
 C:\Users\Administrador\Desktop\PIT_CORONAVIRUS\Web\Coronavirus_Aplicacion\Coronavirus_Aplicacion\bin\MySqlConnector.xml
 C:\Users\Administrador\Desktop\PIT_CORONAVIRUS\Web\Coronavirus_Aplicacion\Coronavirus_Aplicacion\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Administrador\Desktop\PIT_CORONAVIRUS\Web\Coronavirus_Aplicacion\Coronavirus_Aplicacion\obj\Debug\Coronavirus_Aplicacion.csprojAssemblyReference.cache

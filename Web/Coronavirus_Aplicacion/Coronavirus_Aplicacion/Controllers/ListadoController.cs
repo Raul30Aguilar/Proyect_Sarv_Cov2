@@ -14,7 +14,7 @@ namespace Coronavirus_Aplicacion.Controllers
 {
     public class ListadoController : Controller
     {
-        private sars_cov_2Entities  bd = new sars_cov_2Entities();
+        private sars_cov_2Entities1 bd = new sars_cov_2Entities1();
 
         // GET: Listado
 
