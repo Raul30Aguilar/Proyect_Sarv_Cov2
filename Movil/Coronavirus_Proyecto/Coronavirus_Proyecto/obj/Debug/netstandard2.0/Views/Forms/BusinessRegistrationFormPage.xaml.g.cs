@@ -29,6 +29,9 @@ namespace Coronavirus_Proyecto.Views.Forms {
         private global::Coronavirus_Proyecto.Controls.BorderlessEntry Edad;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Syncfusion.XForms.ComboBox.SfComboBox BusinessPicker2;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Syncfusion.XForms.ComboBox.SfComboBox BusinessPicker;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -53,6 +56,7 @@ namespace Coronavirus_Proyecto.Views.Forms {
             Nombre = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Coronavirus_Proyecto.Controls.BorderlessEntry>(this, "Nombre");
             Apellido = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Coronavirus_Proyecto.Controls.BorderlessEntry>(this, "Apellido");
             Edad = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Coronavirus_Proyecto.Controls.BorderlessEntry>(this, "Edad");
+            BusinessPicker2 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.ComboBox.SfComboBox>(this, "BusinessPicker2");
             BusinessPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.ComboBox.SfComboBox>(this, "BusinessPicker");
             BusinessPicker1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.ComboBox.SfComboBox>(this, "BusinessPicker1");
             Direccion = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Coronavirus_Proyecto.Controls.BorderlessEntry>(this, "Direccion");

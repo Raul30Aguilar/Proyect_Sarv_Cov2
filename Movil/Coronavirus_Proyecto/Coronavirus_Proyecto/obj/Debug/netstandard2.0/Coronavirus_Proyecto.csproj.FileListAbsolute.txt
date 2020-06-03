@@ -67,3 +67,4 @@ C:\Users\Administrador\Desktop\PIT_CORONAVIRUS\Movil\Coronavirus_Proyecto\Corona
 C:\Users\Administrador\Desktop\PIT_CORONAVIRUS\Movil\Coronavirus_Proyecto\Coronavirus_Proyecto\obj\Debug\netstandard2.0\Coronavirus_Proyecto.dll
 C:\Users\Administrador\Desktop\PIT_CORONAVIRUS\Movil\Coronavirus_Proyecto\Coronavirus_Proyecto\obj\Debug\netstandard2.0\ref\Coronavirus_Proyecto.dll
 C:\Users\Administrador\Desktop\PIT_CORONAVIRUS\Movil\Coronavirus_Proyecto\Coronavirus_Proyecto\obj\Debug\netstandard2.0\Coronavirus_Proyecto.pdb
+C:\Users\Administrador\Desktop\PIT_CORONAVIRUS\Movil\Coronavirus_Proyecto\Coronavirus_Proyecto\obj\Debug\netstandard2.0\Coronavirus_Proyecto.csprojAssemblyReference.cache

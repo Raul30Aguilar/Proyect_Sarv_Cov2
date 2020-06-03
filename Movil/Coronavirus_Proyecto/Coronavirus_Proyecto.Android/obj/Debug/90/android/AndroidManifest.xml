@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.coronavirus_proyecto">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+  <!--<network-security-config>
+    Set application-wide security config using base-config tag.
+    <base-config cleartextTrafficPermitted="false"/>
+  </network-security-config>-->
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.MAPS_RECEIVE" />
@@ -9,7 +13,7 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <permission android:name="android.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
-  <application android:label="Coronavirus_Proyecto.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
+  <application android:networkSecurityConfig="@xml/network_security_config" android:label="Coronavirus_Proyecto.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
     <uses-library android:name="org.apache.http.legacy" android:required="false" />
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBN3Q4U1i4dUoVHp5K232r7y7nqxURxoHI" />
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Coronavirus_Proyecto" android:theme="@style/MainTheme" android:name="crc64d8040b5ebfe15a3a.MainActivity">
@@ -38,5 +42,12 @@
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <!-- Needs to be explicitly declared on P+ -->
   </application>
+  <!--<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+      <trust-anchors>
+        <certificates src="system" />
+      </trust-anchors>
+    </base-config>
+  </network-security-config>-->
   <uses-feature android:glEsVersion="0x00020000" android:required="true" />
 </manifest>

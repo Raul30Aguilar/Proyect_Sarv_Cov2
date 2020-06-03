@@ -1,26 +1,46 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-
+using Coronavirus_Proyecto.Class;
+using System.Threading.Tasks;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Collections.ObjectModel;
+using Model1 = Coronavirus_Proyecto.Class.Class1;
 namespace Coronavirus_Proyecto.ViewModels.Forms
 {
     /// <summary>
     /// ViewModel for Business Registration Form page 
     /// </summary> 
+ 
     [Preserve(AllMembers = true)]
     public class BusinessRegistrationFormViewModel : BaseViewModel
     {
         #region Constructor
-
+        private ObservableCollection<Model1> latestStories;
         /// <summary>
         /// Initializes a new instance of the <see cref="BusinessRegistrationFormViewModel" /> class
         /// </summary>
         public BusinessRegistrationFormViewModel()
         {
+            Task.Run(async () =>
+            {
+                var endpoint = "http://env-5757416.enscaled.sg/proyecto/covid/departamentos";
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(endpoint);
+                var result = await client.GetStringAsync(endpoint);
+                var lista = JsonConvert.DeserializeObject<DepartamentoList>(result);
+
+                LatestStories = new ObservableCollection<Class1>(lista.Property1);
+
+
+            }).Wait();
+             
+
             this.SubmitCommand = new Command(this.SubmitClicked);
         }
         #endregion
-
+        
         #region Properties
 
         /// <summary>
@@ -78,6 +98,25 @@ namespace Coronavirus_Proyecto.ViewModels.Forms
         private void SubmitClicked(Object obj)
         {
 
+        }
+
+        public ObservableCollection<Model1> LatestStories
+        {
+            get
+            {
+                return this.latestStories;
+            }
+
+            set
+            {
+                if (this.latestStories == value)
+                {
+                    return;
+                }
+
+                this.latestStories = value;
+                this.NotifyPropertyChanged();
+            }
         }
 
         #endregion
