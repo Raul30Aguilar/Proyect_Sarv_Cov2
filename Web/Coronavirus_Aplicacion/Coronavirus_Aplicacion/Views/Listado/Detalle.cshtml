@@ -1,10 +1,18 @@
-﻿@model IEnumerable<Coronavirus_Aplicacion.Models.estado_ciudadano>
+﻿@model Coronavirus_Aplicacion.Models.ciudadano
+
+@{
+    ViewBag.Title = "Detalle";
+}
+
 @{
     /**/
 
     ViewBag.Title = "Inicio";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
+
+
+
 
 <!DOCTYPE HTML>
 <html>
@@ -381,97 +389,107 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="clearfix"> </div>
         </div>
-        
 
         <div id="page-wrapper">
-            <p>
-                @using (Html.BeginForm())
-                {
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                        @Html.DropDownList("estado", null, htmlAttributes: new { @class = "btn btn-secondary dropdown-toggle" })
-                    </button>
-
-
-                     <input type="submit" class="btn btn-danger" value="BUSCAR" />
-
-                </div>
-                    }
-            </p>
-            <br />
             <div class="main-page">
-
-                <table id="ciudadanoTable" class="table table-bordered table-responsive">
+                <H2>DETALLE DEL CIUDADANO</H2>
+                <BR />
+                <table id="ciudadanoTabl" class="table table-bordered table-responsive">
                     <thead>
                         <tr>
                             <th style="text-align:center">NOMBRE</th>
-                            <th style="text-align:center">APELLIDO</th>
-                            <th style="text-align:center">EDAD</th>
-                            <th style="text-align:center">FECHA DEL REGISTRO</th>
-                            <th style="text-align:center">DOCUMENTO</th>
-                            <th style="text-align:center">ESTADO</th>
-                            <th style="text-align:center">VISTA</th>
-                            <th style="text-align:center">CONSULTAS</th>
-                            <th style="text-align:center">ACTUALIZAR</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.nomciudadano)
+                            </td>
                         </tr>
-
-
-                        @foreach (var item in Model)
-                        {
-                    <tr>
-                        <td style="text-align:center">
-
-                            @Html.DisplayFor(modelItem => item.ciudadano.nomciudadano)
-                        </td>
-                        <td style="text-align:center">
-
-                            @Html.DisplayFor(modelItem => item.ciudadano.apeciudadano)
-                        </td>
-                        <td style="text-align:center">
-                            @Html.DisplayFor(modelItem => item.ciudadano.edadciudadano)
-                        </td>
-                        <td style="text-align:center">
-                            @Html.DisplayFor(modelItem => item.ciudadano.fecha)
-                        </td>
-                        <td style="text-align:center">
-                            @Html.DisplayFor(modelItem => item.ciudadano.docciudadano)
-
-                        </td>
-                        <td style="text-align:center">
-                            @Html.DisplayFor(modelItem => item.tipo_estado.estado)
-
-                        </td>
-                        <td style="text-align:center">
-                            @Html.ActionLink("Detalle", "Detalle", new { doc = item.docciudadano }, htmlAttributes: new { @class = "btn btn-info" })
-
-                            @* <a class="btn btn-primary" data-toggle="modal" data-target="#vistaUsuario" role="button" style="font-size:12px;">Visualizar</a>*@
-                        </td>
-                        <td style="text-align:center">
-                            @Html.ActionLink("Triaje", "Triaje", new { docc = item.docciudadano }, htmlAttributes: new { @class = "btn btn-warning" })
-
-                            @* <a class="btn btn-primary" data-toggle="modal" data-target="#vistaUsuario" role="button" style="font-size:12px;">Visualizar</a>*@
-                        </td>
-                        <td style="text-align:center">
-                            <a class="btn btn-primary" data-toggle="modal" data-target="#Actualizar" role="button" style="font-size:12px; background-color:red;">Actualizar</a>
-                        </td>
-                    </tr>
-                        }
-
-
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">APELLIDO</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.apeciudadano)
+                            </td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">CELULAR</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.celciudadano)
+                            </td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">EDAD</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.edadciudadano)
+                            </td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">DIRECCION</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.dirciudadano)
+                            </td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">FECHA DEL REGISTRO</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.fecha)
+                            </td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">DEPARTAMENTO</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.departamento.descripdepa)
+                            </td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">PROVINCIA</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.provincia.provincia1)
+                            </td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">DISTRITO</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.distrito.distrito1)
+                            </td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">TIPO DE DOCUMENTO</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.docciudadano)
+                            </td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">DOCUMENTO</th>
+                            <td style="text-align:center">
+                                @Html.DisplayFor(model => model.tipo_documento.destipodocumento)
+                            </td>
+                        </tr>
                     </thead>
 
                 </table>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    </ul>
-                </nav>
+            
+                <td style="text-align:center">
+                    @Html.ActionLink("Regresar al Listado", "Listado",new { },htmlAttributes: new { @class ="btn btn-pill btn-primary"})
 
-
+                </td>
 
                 <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
                 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -512,7 +530,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
         @*<iframe frameborder="0" allowtransparency="true" width="100%" height="100%" src="https://app.powerbi.com/view?r=eyJrIjoiNGQ2MjA0NzktMTY2NC00NzJmLWE5NGUtODJiZTIwZmY1YzFkIiwidCI6Ijc5MDVjMWZjLTkzM2MtNDUyYS04YjgzLWIyZTU2NDU1ZDE2YSIsImMiOjR9"> </iframe>*@
     </div>
     <!--MODAL DE VISTA-->
-   
+
     <div class="modal fade" id="vistaUsuario" tabindex="-1" role="dialog" aria-labelledby="vistaTitle" aria-hidden="true">
         <div class="modal-dialog" role="form">
             <div class="modal-content">
@@ -524,7 +542,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 </div>
 
 
-                <form id="formVista">               
+                <form id="formVista">
                     <div class="modal-body">
 
                         <div class="form-group row">
@@ -601,15 +619,15 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <div class="col-sm-10">
                                 <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"></label>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
 
                 </form>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    </div>
-    </div>
-    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
     <!--MODAL DE ACTUALIZAR-->
     <div class="modal fade" id="Actualizar" tabindex="-1" role="dialog" aria-labelledby="ActualizarTitle" aria-hidden="true">
@@ -665,7 +683,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 <option>Provincia3</option>
                             </select>
                         </div>
-                        
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light" data-dismiss="modal">CANCELAR</button>

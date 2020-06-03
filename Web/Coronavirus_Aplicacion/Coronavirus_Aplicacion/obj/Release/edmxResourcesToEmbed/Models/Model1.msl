@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="sars_cov_2ModelStoreContainer" CdmEntityContainer="sars_cov_2Entities1">
+  <EntityContainerMapping StorageEntityContainer="sars_cov_2ModelStoreContainer" CdmEntityContainer="sars_cov_2Entities">
     <EntitySetMapping Name="ciudadano">
       <EntityTypeMapping TypeName="sars_cov_2Model.ciudadano">
         <MappingFragment StoreEntitySet="ciudadano">
@@ -74,14 +74,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="prueba">
-      <EntityTypeMapping TypeName="sars_cov_2Model.prueba">
-        <MappingFragment StoreEntitySet="prueba">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="rol">
       <EntityTypeMapping TypeName="sars_cov_2Model.rol">
         <MappingFragment StoreEntitySet="rol">
@@ -96,14 +88,6 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="idrol" ColumnName="idrol" />
           <ScalarProperty Name="idoperacion" ColumnName="idoperacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="suv">
-      <EntityTypeMapping TypeName="sars_cov_2Model.suv">
-        <MappingFragment StoreEntitySet="suv">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -162,10 +146,21 @@
     <FunctionImportMapping FunctionImportName="add_status_ciu" FunctionName="sars_cov_2Model.Store.add_status_ciu" />
     <FunctionImportMapping FunctionImportName="put_status_ciu" FunctionName="sars_cov_2Model.Store.put_status_ciu" />
     <FunctionImportMapping FunctionImportName="sp_add_cuixtriaje" FunctionName="sars_cov_2Model.Store.sp_add_cuixtriaje" />
+    <FunctionImportMapping FunctionImportName="sp_list_ciu_and_status" FunctionName="sars_cov_2Model.Store.sp_list_ciu_and_status">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sars_cov_2Model.sp_list_ciu_and_status_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_list_triajeXdoc" FunctionName="sars_cov_2Model.Store.sp_list_triajeXdoc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sars_cov_2Model.sp_list_triajeXdoc_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_list_ubigeo" FunctionName="sars_cov_2Model.Store.sp_list_ubigeo">
       <ResultMapping>
         <ComplexTypeMapping TypeName="sars_cov_2Model.sp_list_ubigeo_Result" />
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_list_ciu_and_statusxdoc" FunctionName="sars_cov_2Model.Store.sp_list_ciu_and_statusxdoc" />
   </EntityContainerMapping>
 </Mapping>

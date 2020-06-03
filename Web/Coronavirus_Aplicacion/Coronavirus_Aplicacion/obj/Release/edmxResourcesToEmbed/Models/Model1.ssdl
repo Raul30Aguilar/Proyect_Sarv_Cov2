@@ -9,13 +9,13 @@
     <Property Name="apeciudadano" Type="varchar" MaxLength="45" Nullable="false" />
     <Property Name="celciudadano" Type="char" MaxLength="9" Nullable="false" />
     <Property Name="edadciudadano" Type="int" Nullable="false" />
-    <Property Name="docciudadano" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="docciudadano" Type="int" Nullable="false" />
     <Property Name="dirciudadano" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="iddepartamento" Type="int" Nullable="false" />
     <Property Name="idprov" Type="int" Nullable="false" />
     <Property Name="iddistrito" Type="int" Nullable="false" />
     <Property Name="idtipodocumento" Type="int" Nullable="false" />
-    <Property Name="fecha" Type="date" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Precision="0" Nullable="false" />
   </EntityType>
   <EntityType Name="departamento">
     <Key>
@@ -38,7 +38,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idestado" Type="int" />
-    <Property Name="docciudadano" Type="char" MaxLength="20" />
+    <Property Name="docciudadano" Type="int" />
     <Property Name="idtriaje" Type="int" />
     <Property Name="fechaRegistro" Type="datetime" Precision="0" />
     <Property Name="fechaModificacion" Type="datetime" Precision="0" />
@@ -66,13 +66,6 @@
     <Property Name="provincia" Type="varchar" MaxLength="50" />
     <Property Name="iddepa" Type="int" />
   </EntityType>
-  <EntityType Name="prueba">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
-  </EntityType>
   <EntityType Name="rol">
     <Key>
       <PropertyRef Name="id" />
@@ -87,13 +80,6 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idrol" Type="int" />
     <Property Name="idoperacion" Type="int" />
-  </EntityType>
-  <EntityType Name="suv">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="tipo_documento">
     <Key>
@@ -130,7 +116,7 @@
     <Property Name="question2_cronica" Type="bit" Nullable="false" />
     <Property Name="persona" Type="int" Nullable="false" />
     <Property Name="fecha" Type="date" Nullable="false" />
-    <Property Name="docciudadano" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="docciudadano" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="usuario">
     <Key>
@@ -143,19 +129,7 @@
     <Property Name="fecha" Type="date" Nullable="false" />
     <Property Name="idrol" Type="int" />
   </EntityType>
-  <Association Name="fk__estado_ci__docci__7a672e12">
-    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="0..1" />
-    <End Role="estado_ciudadano" Type="Self.estado_ciudadano" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ciudadano">
-        <PropertyRef Name="docciudadano" />
-      </Principal>
-      <Dependent Role="estado_ciudadano">
-        <PropertyRef Name="docciudadano" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk__estado_ci__idest__440b1d61">
+  <Association Name="fk__estadi_ci_idestado">
     <End Role="tipo_estado" Type="Self.tipo_estado" Multiplicity="0..1" />
     <End Role="estado_ciudadano" Type="Self.estado_ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
@@ -167,7 +141,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk__estado_ci__idtri__7b5b524b">
+  <Association Name="fk__estado_ci_docciu">
+    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="0..1" />
+    <End Role="estado_ciudadano" Type="Self.estado_ciudadano" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ciudadano">
+        <PropertyRef Name="docciudadano" />
+      </Principal>
+      <Dependent Role="estado_ciudadano">
+        <PropertyRef Name="docciudadano" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk__estado_ci_idtriaje">
     <End Role="triaje" Type="Self.triaje" Multiplicity="0..1" />
     <End Role="estado_ciudadano" Type="Self.estado_ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
@@ -224,18 +210,6 @@
       </Principal>
       <Dependent Role="usuario">
         <PropertyRef Name="idrol" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_docciudadano">
-    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="1" />
-    <End Role="triaje" Type="Self.triaje" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ciudadano">
-        <PropertyRef Name="docciudadano" />
-      </Principal>
-      <Dependent Role="triaje">
-        <PropertyRef Name="docciudadano" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -311,27 +285,38 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_triaje_docciu">
+    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="1" />
+    <End Role="triaje" Type="Self.triaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ciudadano">
+        <PropertyRef Name="docciudadano" />
+      </Principal>
+      <Dependent Role="triaje">
+        <PropertyRef Name="docciudadano" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Function Name="add_status_ciu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2">
     <Parameter Name="idstatus" Type="int" Mode="In" />
-    <Parameter Name="doc" Type="char" Mode="In" />
+    <Parameter Name="doc" Type="int" Mode="In" />
     <Parameter Name="triaje" Type="int" Mode="In" />
   </Function>
   <Function Name="put_status_ciu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2">
     <Parameter Name="idstatus" Type="int" Mode="In" />
-    <Parameter Name="doc" Type="char" Mode="In" />
+    <Parameter Name="doc" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_add_cuixtriaje" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2">
     <Parameter Name="nom" Type="varchar" Mode="In" />
     <Parameter Name="ape" Type="varchar" Mode="In" />
     <Parameter Name="cel" Type="char" Mode="In" />
     <Parameter Name="edad" Type="int" Mode="In" />
-    <Parameter Name="doc" Type="char" Mode="In" />
+    <Parameter Name="doc" Type="int" Mode="In" />
     <Parameter Name="dir" Type="varchar" Mode="In" />
     <Parameter Name="depa" Type="int" Mode="In" />
     <Parameter Name="prov" Type="int" Mode="In" />
     <Parameter Name="dis" Type="int" Mode="In" />
     <Parameter Name="tdoc" Type="int" Mode="In" />
-    <Parameter Name="fecha" Type="date" Mode="In" />
     <Parameter Name="qua1" Type="bit" Mode="In" />
     <Parameter Name="qua2" Type="bit" Mode="In" />
     <Parameter Name="qua3" Type="bit" Mode="In" />
@@ -348,9 +333,17 @@
     <Parameter Name="qua_cro" Type="bit" Mode="In" />
     <Parameter Name="per" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_count_triaje" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2" />
+  <Function Name="sp_list_ciu_and_status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2" />
+  <Function Name="sp_list_ciu_and_statusxdoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2">
+    <Parameter Name="doc" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_list_depa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2" />
   <Function Name="sp_list_distrito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2" />
   <Function Name="sp_list_prov" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2" />
+  <Function Name="sp_list_triajeXdoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2">
+    <Parameter Name="doc" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_list_ubigeo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sars_cov_2">
     <Parameter Name="depa" Type="varchar" Mode="In" />
     <Parameter Name="prov" Type="varchar" Mode="In" />
@@ -364,23 +357,21 @@
     <EntitySet Name="modulo" EntityType="Self.modulo" Schema="sars_cov_2" store:Type="Tables" />
     <EntitySet Name="operacion" EntityType="Self.operacion" Schema="sars_cov_2" store:Type="Tables" />
     <EntitySet Name="provincia" EntityType="Self.provincia" Schema="sars_cov_2" store:Type="Tables" />
-    <EntitySet Name="prueba" EntityType="Self.prueba" Schema="sars_cov_2" store:Type="Tables" />
     <EntitySet Name="rol" EntityType="Self.rol" Schema="sars_cov_2" store:Type="Tables" />
     <EntitySet Name="rol_operacion" EntityType="Self.rol_operacion" Schema="sars_cov_2" store:Type="Tables" />
-    <EntitySet Name="suv" EntityType="Self.suv" Schema="sars_cov_2" store:Type="Tables" />
     <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" Schema="sars_cov_2" store:Type="Tables" />
     <EntitySet Name="tipo_estado" EntityType="Self.tipo_estado" Schema="sars_cov_2" store:Type="Tables" />
     <EntitySet Name="triaje" EntityType="Self.triaje" Schema="sars_cov_2" store:Type="Tables" />
     <EntitySet Name="usuario" EntityType="Self.usuario" Schema="sars_cov_2" store:Type="Tables" />
-    <AssociationSet Name="fk__estado_ci__docci__7a672e12" Association="Self.fk__estado_ci__docci__7a672e12">
-      <End Role="ciudadano" EntitySet="ciudadano" />
-      <End Role="estado_ciudadano" EntitySet="estado_ciudadano" />
-    </AssociationSet>
-    <AssociationSet Name="fk__estado_ci__idest__440b1d61" Association="Self.fk__estado_ci__idest__440b1d61">
+    <AssociationSet Name="fk__estadi_ci_idestado" Association="Self.fk__estadi_ci_idestado">
       <End Role="tipo_estado" EntitySet="tipo_estado" />
       <End Role="estado_ciudadano" EntitySet="estado_ciudadano" />
     </AssociationSet>
-    <AssociationSet Name="fk__estado_ci__idtri__7b5b524b" Association="Self.fk__estado_ci__idtri__7b5b524b">
+    <AssociationSet Name="fk__estado_ci_docciu" Association="Self.fk__estado_ci_docciu">
+      <End Role="ciudadano" EntitySet="ciudadano" />
+      <End Role="estado_ciudadano" EntitySet="estado_ciudadano" />
+    </AssociationSet>
+    <AssociationSet Name="fk__estado_ci_idtriaje" Association="Self.fk__estado_ci_idtriaje">
       <End Role="triaje" EntitySet="triaje" />
       <End Role="estado_ciudadano" EntitySet="estado_ciudadano" />
     </AssociationSet>
@@ -399,10 +390,6 @@
     <AssociationSet Name="fk__usuario__idrol__4ab81af0" Association="Self.fk__usuario__idrol__4ab81af0">
       <End Role="rol" EntitySet="rol" />
       <End Role="usuario" EntitySet="usuario" />
-    </AssociationSet>
-    <AssociationSet Name="fk_docciudadano" Association="Self.fk_docciudadano">
-      <End Role="ciudadano" EntitySet="ciudadano" />
-      <End Role="triaje" EntitySet="triaje" />
     </AssociationSet>
     <AssociationSet Name="fk_iddepa" Association="Self.fk_iddepa">
       <End Role="departamento" EntitySet="departamento" />
@@ -427,6 +414,10 @@
     <AssociationSet Name="fk_idtipodocumento" Association="Self.fk_idtipodocumento">
       <End Role="tipo_documento" EntitySet="tipo_documento" />
       <End Role="ciudadano" EntitySet="ciudadano" />
+    </AssociationSet>
+    <AssociationSet Name="fk_triaje_docciu" Association="Self.fk_triaje_docciu">
+      <End Role="ciudadano" EntitySet="ciudadano" />
+      <End Role="triaje" EntitySet="triaje" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

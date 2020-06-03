@@ -9,19 +9,19 @@
     <Property Name="apeciudadano" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="celciudadano" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="edadciudadano" Type="Int32" Nullable="false" />
-    <Property Name="docciudadano" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="docciudadano" Type="Int32" Nullable="false" />
     <Property Name="dirciudadano" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="iddepartamento" Type="Int32" Nullable="false" />
     <Property Name="idprov" Type="Int32" Nullable="false" />
     <Property Name="iddistrito" Type="Int32" Nullable="false" />
     <Property Name="idtipodocumento" Type="Int32" Nullable="false" />
     <Property Name="fecha" Type="DateTime" Nullable="false" />
-    <NavigationProperty Name="estado_ciudadano" Relationship="Self.fk__estado_ci__docci__7a672e12" FromRole="ciudadano" ToRole="estado_ciudadano" />
-    <NavigationProperty Name="triaje" Relationship="Self.fk_docciudadano" FromRole="ciudadano" ToRole="triaje" />
+    <NavigationProperty Name="estado_ciudadano" Relationship="Self.fk__estado_ci_docciu" FromRole="ciudadano" ToRole="estado_ciudadano" />
     <NavigationProperty Name="departamento" Relationship="Self.fk_iddepartamento" FromRole="ciudadano" ToRole="departamento" />
     <NavigationProperty Name="distrito" Relationship="Self.fk_iddistri" FromRole="ciudadano" ToRole="distrito" />
     <NavigationProperty Name="provincia" Relationship="Self.fk_idprovi" FromRole="ciudadano" ToRole="provincia" />
     <NavigationProperty Name="tipo_documento" Relationship="Self.fk_idtipodocumento" FromRole="ciudadano" ToRole="tipo_documento" />
+    <NavigationProperty Name="triaje" Relationship="Self.fk_triaje_docciu" FromRole="ciudadano" ToRole="triaje" />
   </EntityType>
   <EntityType Name="departamento">
     <Key>
@@ -48,13 +48,13 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="idestado" Type="Int32" />
-    <Property Name="docciudadano" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="docciudadano" Type="Int32" />
     <Property Name="idtriaje" Type="Int32" />
     <Property Name="fechaRegistro" Type="DateTime" />
     <Property Name="fechaModificacion" Type="DateTime" />
-    <NavigationProperty Name="ciudadano" Relationship="Self.fk__estado_ci__docci__7a672e12" FromRole="estado_ciudadano" ToRole="ciudadano" />
-    <NavigationProperty Name="tipo_estado" Relationship="Self.fk__estado_ci__idest__440b1d61" FromRole="estado_ciudadano" ToRole="tipo_estado" />
-    <NavigationProperty Name="triaje" Relationship="Self.fk__estado_ci__idtri__7b5b524b" FromRole="estado_ciudadano" ToRole="triaje" />
+    <NavigationProperty Name="ciudadano" Relationship="Self.fk__estado_ci_docciu" FromRole="estado_ciudadano" ToRole="ciudadano" />
+    <NavigationProperty Name="tipo_estado" Relationship="Self.fk__estadi_ci_idestado" FromRole="estado_ciudadano" ToRole="tipo_estado" />
+    <NavigationProperty Name="triaje" Relationship="Self.fk__estado_ci_idtriaje" FromRole="estado_ciudadano" ToRole="triaje" />
   </EntityType>
   <EntityType Name="modulo">
     <Key>
@@ -85,13 +85,6 @@
     <NavigationProperty Name="departamento" Relationship="Self.fk_iddepa" FromRole="provincia" ToRole="departamento" />
     <NavigationProperty Name="distrito" Relationship="Self.fk_idprov" FromRole="provincia" ToRole="distrito" />
   </EntityType>
-  <EntityType Name="prueba">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-  </EntityType>
   <EntityType Name="rol">
     <Key>
       <PropertyRef Name="id" />
@@ -111,13 +104,6 @@
     <NavigationProperty Name="operacion" Relationship="Self.fk__rol_opera__idope__47dbae45" FromRole="rol_operacion" ToRole="operacion" />
     <NavigationProperty Name="rol" Relationship="Self.fk__rol_opera__idrol__48cfd27e" FromRole="rol_operacion" ToRole="rol" />
   </EntityType>
-  <EntityType Name="suv">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="tipo_documento">
     <Key>
       <PropertyRef Name="idtipodocumento" />
@@ -132,7 +118,7 @@
     </Key>
     <Property Name="idestado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="estado_ciudadano" Relationship="Self.fk__estado_ci__idest__440b1d61" FromRole="tipo_estado" ToRole="estado_ciudadano" />
+    <NavigationProperty Name="estado_ciudadano" Relationship="Self.fk__estadi_ci_idestado" FromRole="tipo_estado" ToRole="estado_ciudadano" />
   </EntityType>
   <EntityType Name="triaje">
     <Key>
@@ -155,9 +141,9 @@
     <Property Name="question2_cronica" Type="Boolean" Nullable="false" />
     <Property Name="persona" Type="Int32" Nullable="false" />
     <Property Name="fecha" Type="DateTime" Nullable="false" />
-    <Property Name="docciudadano" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="ciudadano" Relationship="Self.fk_docciudadano" FromRole="triaje" ToRole="ciudadano" />
-    <NavigationProperty Name="estado_ciudadano" Relationship="Self.fk__estado_ci__idtri__7b5b524b" FromRole="triaje" ToRole="estado_ciudadano" />
+    <Property Name="docciudadano" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ciudadano" Relationship="Self.fk_triaje_docciu" FromRole="triaje" ToRole="ciudadano" />
+    <NavigationProperty Name="estado_ciudadano" Relationship="Self.fk__estado_ci_idtriaje" FromRole="triaje" ToRole="estado_ciudadano" />
   </EntityType>
   <EntityType Name="usuario">
     <Key>
@@ -171,7 +157,7 @@
     <Property Name="idrol" Type="Int32" />
     <NavigationProperty Name="rol" Relationship="Self.fk__usuario__idrol__4ab81af0" FromRole="usuario" ToRole="rol" />
   </EntityType>
-  <Association Name="fk__estado_ci__docci__7a672e12">
+  <Association Name="fk__estado_ci_docciu">
     <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="0..1" />
     <End Role="estado_ciudadano" Type="Self.estado_ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
@@ -179,18 +165,6 @@
         <PropertyRef Name="docciudadano" />
       </Principal>
       <Dependent Role="estado_ciudadano">
-        <PropertyRef Name="docciudadano" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_docciudadano">
-    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="1" />
-    <End Role="triaje" Type="Self.triaje" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ciudadano">
-        <PropertyRef Name="docciudadano" />
-      </Principal>
-      <Dependent Role="triaje">
         <PropertyRef Name="docciudadano" />
       </Dependent>
     </ReferentialConstraint>
@@ -243,6 +217,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_triaje_docciu">
+    <End Role="ciudadano" Type="Self.ciudadano" Multiplicity="1" />
+    <End Role="triaje" Type="Self.triaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ciudadano">
+        <PropertyRef Name="docciudadano" />
+      </Principal>
+      <Dependent Role="triaje">
+        <PropertyRef Name="docciudadano" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_iddepa">
     <End Role="departamento" Type="Self.departamento" Multiplicity="0..1" />
     <End Role="provincia" Type="Self.provincia" Multiplicity="*" />
@@ -267,7 +253,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk__estado_ci__idest__440b1d61">
+  <Association Name="fk__estadi_ci_idestado">
     <End Role="tipo_estado" Type="Self.tipo_estado" Multiplicity="0..1" />
     <End Role="estado_ciudadano" Type="Self.estado_ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
@@ -279,7 +265,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk__estado_ci__idtri__7b5b524b">
+  <Association Name="fk__estado_ci_idtriaje">
     <End Role="triaje" Type="Self.triaje" Multiplicity="0..1" />
     <End Role="estado_ciudadano" Type="Self.estado_ciudadano" Multiplicity="*" />
     <ReferentialConstraint>
@@ -339,7 +325,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="sars_cov_2Entities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="sars_cov_2Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ciudadano" EntityType="Self.ciudadano" />
     <EntitySet Name="departamento" EntityType="Self.departamento" />
     <EntitySet Name="distrito" EntityType="Self.distrito" />
@@ -347,21 +333,15 @@
     <EntitySet Name="modulo" EntityType="Self.modulo" />
     <EntitySet Name="operacion" EntityType="Self.operacion" />
     <EntitySet Name="provincia" EntityType="Self.provincia" />
-    <EntitySet Name="prueba" EntityType="Self.prueba" />
     <EntitySet Name="rol" EntityType="Self.rol" />
     <EntitySet Name="rol_operacion" EntityType="Self.rol_operacion" />
-    <EntitySet Name="suv" EntityType="Self.suv" />
     <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" />
     <EntitySet Name="tipo_estado" EntityType="Self.tipo_estado" />
     <EntitySet Name="triaje" EntityType="Self.triaje" />
     <EntitySet Name="usuario" EntityType="Self.usuario" />
-    <AssociationSet Name="fk__estado_ci__docci__7a672e12" Association="Self.fk__estado_ci__docci__7a672e12">
+    <AssociationSet Name="fk__estado_ci_docciu" Association="Self.fk__estado_ci_docciu">
       <End Role="ciudadano" EntitySet="ciudadano" />
       <End Role="estado_ciudadano" EntitySet="estado_ciudadano" />
-    </AssociationSet>
-    <AssociationSet Name="fk_docciudadano" Association="Self.fk_docciudadano">
-      <End Role="ciudadano" EntitySet="ciudadano" />
-      <End Role="triaje" EntitySet="triaje" />
     </AssociationSet>
     <AssociationSet Name="fk_iddepartamento" Association="Self.fk_iddepartamento">
       <End Role="departamento" EntitySet="departamento" />
@@ -379,6 +359,10 @@
       <End Role="tipo_documento" EntitySet="tipo_documento" />
       <End Role="ciudadano" EntitySet="ciudadano" />
     </AssociationSet>
+    <AssociationSet Name="fk_triaje_docciu" Association="Self.fk_triaje_docciu">
+      <End Role="ciudadano" EntitySet="ciudadano" />
+      <End Role="triaje" EntitySet="triaje" />
+    </AssociationSet>
     <AssociationSet Name="fk_iddepa" Association="Self.fk_iddepa">
       <End Role="departamento" EntitySet="departamento" />
       <End Role="provincia" EntitySet="provincia" />
@@ -387,11 +371,11 @@
       <End Role="provincia" EntitySet="provincia" />
       <End Role="distrito" EntitySet="distrito" />
     </AssociationSet>
-    <AssociationSet Name="fk__estado_ci__idest__440b1d61" Association="Self.fk__estado_ci__idest__440b1d61">
+    <AssociationSet Name="fk__estadi_ci_idestado" Association="Self.fk__estadi_ci_idestado">
       <End Role="tipo_estado" EntitySet="tipo_estado" />
       <End Role="estado_ciudadano" EntitySet="estado_ciudadano" />
     </AssociationSet>
-    <AssociationSet Name="fk__estado_ci__idtri__7b5b524b" Association="Self.fk__estado_ci__idtri__7b5b524b">
+    <AssociationSet Name="fk__estado_ci_idtriaje" Association="Self.fk__estado_ci_idtriaje">
       <End Role="triaje" EntitySet="triaje" />
       <End Role="estado_ciudadano" EntitySet="estado_ciudadano" />
     </AssociationSet>
@@ -413,25 +397,24 @@
     </AssociationSet>
     <FunctionImport Name="add_status_ciu">
       <Parameter Name="idstatus" Mode="In" Type="Int32" />
-      <Parameter Name="doc" Mode="In" Type="String" />
+      <Parameter Name="doc" Mode="In" Type="Int32" />
       <Parameter Name="triaje" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="put_status_ciu">
       <Parameter Name="idstatus" Mode="In" Type="Int32" />
-      <Parameter Name="doc" Mode="In" Type="String" />
+      <Parameter Name="doc" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_add_cuixtriaje">
       <Parameter Name="nom" Mode="In" Type="String" />
       <Parameter Name="ape" Mode="In" Type="String" />
       <Parameter Name="cel" Mode="In" Type="String" />
       <Parameter Name="edad" Mode="In" Type="Int32" />
-      <Parameter Name="doc" Mode="In" Type="String" />
+      <Parameter Name="doc" Mode="In" Type="Int32" />
       <Parameter Name="dir" Mode="In" Type="String" />
       <Parameter Name="depa" Mode="In" Type="Int32" />
       <Parameter Name="prov" Mode="In" Type="Int32" />
       <Parameter Name="dis" Mode="In" Type="Int32" />
       <Parameter Name="tdoc" Mode="In" Type="Int32" />
-      <Parameter Name="fecha" Mode="In" Type="DateTime" />
       <Parameter Name="qua1" Mode="In" Type="Boolean" />
       <Parameter Name="qua2" Mode="In" Type="Boolean" />
       <Parameter Name="qua3" Mode="In" Type="Boolean" />
@@ -448,11 +431,20 @@
       <Parameter Name="qua_cro" Mode="In" Type="Boolean" />
       <Parameter Name="per" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_list_ciu_and_status" ReturnType="Collection(sars_cov_2Model.sp_list_ciu_and_status_Result)" />
+    <FunctionImport Name="sp_list_triajeXdoc" ReturnType="Collection(sars_cov_2Model.sp_list_triajeXdoc_Result)">
+      <Parameter Name="doc" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="sp_list_ubigeo" ReturnType="Collection(sars_cov_2Model.sp_list_ubigeo_Result)">
       <Parameter Name="depa" Mode="In" Type="String" />
       <Parameter Name="prov" Mode="In" Type="String" />
       <Parameter Name="distri" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_list_ciu_and_statusxdoc">
+      <Parameter Name="doc" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="sp_list_ciu_and_status_Result" />
+  <ComplexType Name="sp_list_triajeXdoc_Result" />
   <ComplexType Name="sp_list_ubigeo_Result" />
 </Schema>
