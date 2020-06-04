@@ -72,6 +72,22 @@ namespace Coronavirus_Aplicacion.Controllers
             return View(rdj);
         }
 
+        public ActionResult Actualizar(int? doc)
+        {
+            if (doc == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            }
+            ciudadano obj = bd.ciudadano.Find(doc);
+
+            if (obj == null)
+            {
+                HttpNotFound();
+            }
+            return View(obj);
+        }
+
 
 
 

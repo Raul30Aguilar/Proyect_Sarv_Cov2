@@ -377,6 +377,7 @@
     <Content Include="Views\Listado\Listado.cshtml" />
     <Content Include="Views\Listado\Detalle.cshtml" />
     <Content Include="Views\Listado\Triaje.cshtml" />
+    <Content Include="Views\Listado\Actualizar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
